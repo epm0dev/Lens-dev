@@ -1,0 +1,10 @@
+{% extends 'projects/content.html' %}
+{% block header %}
+    <span class="card-content-icon-link">
+        <span class="fa fa-ellipsis-v"></span>
+    </span>
+    <span class="card-content-header-text">Project Description</span>
+{% endblock %}
+{% block project_content %}
+    <p class="project-description">{{ project.description }}</p>
+{% endblock %}

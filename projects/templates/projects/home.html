@@ -1,0 +1,16 @@
+<!-- Extend the base page template and override its content block. -->
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Load static content and link the project application's stylesheet. -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}?{% now "U" %}">
+
+    <!-- Display a project card for each project in the template's context. -->
+    {% for project, contents in projects %}
+        {% include 'projects/card.html' %}
+    {% endfor %}
+
+    <!-- Load jQuery and a script to dynamically set the status badge background color for each project card. -->
+    <script src="{% static 'javascript/jquery-3.5.1.js' %}"></script>
+    <script src="{% static 'javascript/card-badge-color.js' %}"></script>
+{% endblock %}

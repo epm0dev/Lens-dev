@@ -1,0 +1,32 @@
+<!-- Extend the base page template and override its content block. -->
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Load static content and link the about page's stylesheet. -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}?{% now "U" %}">
+
+    <!-- Display a welcome card with a concise, yet meaningful, introduction. -->
+    <div id="hello-card">
+        <!-- Display a photograph, and some basic information. -->
+        <span id="hello-card-picture-container">
+            <!-- TODO Picture, Name, Short Horizontal Bar, Title -->
+        </span>
+
+        <!-- Display a vertical line to divide the previous element and the next. -->
+        <span class="vl"></span>
+
+        <!-- Display more in depth information about myself, including an introduction and mini-bio. -->
+        <span id="hello-card-bio-container">
+            <!-- TODO Short introduction and bio, maybe some links -->
+        </span>
+
+        <!-- Display a horizontal line below the picture and biography sections of the card. -->
+        <span class="hl"></span>
+
+        <!-- Display a footer containing icons which link to various profiles. -->
+        <span id="hello-card-footer">
+            <a target="_blank" href="https://github.com/epm0dev/" class="fa fa-github"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/epm0dev/" class="fa fa-linkedin"></a>
+        </span>
+    </div>
+{% endblock %}

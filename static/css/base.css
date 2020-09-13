@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body, html {
+    --gray-darker: rgba(94, 94, 94, 1);
+    --gray-dark: rgba(160, 160, 160, 1);
+    --gray-light: rgba(180, 180, 180, 1);
+    --gray-lighter: rgba(191, 193, 189, 1);
+    --green-dark: rgba(100, 140, 98, 1);
+    --green-light: rgba(150, 173, 149, 1);
+    --purple-pale: rgba(170, 152, 169, 1);
+    --yellow-green: rgba(173, 255, 47, 1);
+    --yellow-light: rgba(255, 255, 51, 1);
+
+    background: var(--gray-lighter);
+    margin: 0;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+a:link {
+    color: black;
+}
+
+#header {
+    display: flex;
+    width: 100%;
+    height: 54px;
+    background: var(--green-light);
+    font-size: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#header-name-container {
+    display: inline-block;
+    height: 50px;
+    font-size: xx-large;
+    width: 100%;
+    font-family: "Kumbh Sans", sans-serif;
+    padding: 6px 0 0 10px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+#nav-bar {
+    display: inline-block;
+    min-width: 600px;
+}
+
+div.content-area {
+    display: flex;
+    flex-flow: column;
+    font-size: xx-large;
+    font-family: "Kumbh Sans", sans-serif;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    max-height: 100vh;
+    min-height: 800px;
+}
+
+#coming-soon-card {
+    position: absolute;
+    flex-grow: 1;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 100px;
+    background: var(--green-light);
+    display: inline-block;
+    font-size: 50px;
+    font-family: "Roboto Mono", sans-serif;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 100px;
+    margin: -50px 0 0 -200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 0 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+div.container-nav-button {
+    display: inline-block;
+    height: 50px;
+    width: 120px;
+    min-width: 120px;
+    font-size: large;
+    font-family: "Kumbh Sans", sans-serif;
+    position: relative;
+    padding: 4px 0 0 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+div.container-nav-button:hover {
+    background: var(--green-dark);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 0 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.fa {
+    padding: 0;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.6;
+}
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.project-card-status-badge .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-card-status-badge .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.project-card-status-badge:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

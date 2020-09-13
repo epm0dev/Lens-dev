@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- A base page template which contains a header bar and a content block for child templates to override. -->
+<html lang="en">
+    <head>
+        <!-- Set the page's character set. -->
+        <meta charset="UTF-8">
+
+        <!-- Set the page title to a value specified in the context passed to a child template for rendering. -->
+        <title>Ethan Mancini - {{ page_title }}</title>
+
+        <!-- Load static content, set the page's favicon, link the main project stylesheet and link the icon stylesheet. -->
+        {% load static %}
+        <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}?{% now "U" %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!-- Create a main content area for the page. -->
+        <div class="content-area">
+            <!-- Create a container for the header bar. -->
+            <div id="header">
+                <!-- Create a container for a hyperlink which displays my name and links to the main about page. -->
+                <div id="header-name-container" class="disable-select">
+                    <a href="/about/">Ethan Mancini</a>
+                </div>
+
+                <!-- Create a container for a navigation bar which contains links to the website's various pages. -->
+                <div>
+                    <nav id="nav-bar">
+                        <a href="/about/"><div class="container-nav-button disable-select">ABOUT ME</div></a>
+                        <a href="/resume/"><div class="container-nav-button disable-select">RESUME</div></a>
+                        <a href="/projects/"><div class="container-nav-button disable-select">PROJECTS</div></a>
+                        <a href="/blog/"><div class="container-nav-button disable-select">BLOG</div></a>
+                        <a href="/contact/"><div class="container-nav-button disable-select">CONTACT</div></a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Define a block which child templates can override to display page-specific content. -->
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
