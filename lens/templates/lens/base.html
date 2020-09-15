@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- A base page template which contains a header bar and a content block for child templates to override. -->
+<html lang="en">
+<head>
+    <!-- Set the page's character set. -->
+    <meta charset="UTF-8">
+
+    <!-- Set the page title to a value specified in the context passed to a child template for rendering. -->
+    <title>Lens - {{ page_title }}</title>
+
+    <!-- Load static content, set the page's favicon, link the main project stylesheet and link the icon stylesheet. -->
+    {% load static %}
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- Display a navigation bar in the top right hand of the screen to aid in website navigation -->
+<nav id="nav-bar">
+    <a href="/"><div class="nav-button">HOME</div></a>
+    <a href="/resume"><div class="nav-button">RESUME</div></a>
+    <a href="/projects"><div class="nav-button">PROJECTS</div></a>
+    <a href="/blog"><div class="nav-button">BLOG</div></a>
+    <a href="/contact"><div class="nav-button">CONTACT</div></a>
+</nav>
+
+<!-- Create a main content area for the page. -->
+<div class="wrapper">
+    <!-- Define a block which child templates can override to display page-specific content. -->
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

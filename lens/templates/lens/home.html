@@ -1,0 +1,38 @@
+{% extends 'lens/base.html' %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}?{% now "U" %}">
+    <div class="wrapper">
+        <div class="column-layout">
+            <div class="column" id="bio-column">
+                <div>
+                    <h1>Hello.</h1>
+                    <p>Interesting hook</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi earum fugit veniam amet quae sint vitae numquam dolore sunt quod a odio officia voluptate doloribus, at. Cum quasi mollitia eaque. Voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi earum fugit veniam amet quae sint vitae numquam dolore sunt quod</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi earum fugit veniam amet quae sint vitae numquam dolore sunt quod a odio officia voluptate doloribus, at. Cum quasi mollitia eaque. Voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium.</p>
+                </div>
+            </div>
+            <div class="column" id="intro-column">
+                <div class="stack">
+                    <div class="row">
+                        <img src="{% static '/images/placeholder-portrait.png' %}" alt="Portrait">
+                        <div class="stack">
+                            <h1>Ethan Mancini</h1>
+                            <h3>This is some subtext</h3>
+                        </div>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="row">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi earum fugit veniam amet quae sint vitae numquam dolore sunt quod a odio officia voluptate doloribus, at. Cum quasi mollitia eaque. Voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium.</p>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="row">
+                        <a target="_blank" href="https://github.com/epm0dev/" class="fa fa-github fa-2x"></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/epm0dev/" class="fa fa-linkedin fa-2x"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

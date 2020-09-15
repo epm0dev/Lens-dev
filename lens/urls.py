@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-from django.views.generic import RedirectView
-from .views import AboutView
+from .views import HomeView
 
 import resume.urls
 import projects.urls
@@ -27,8 +26,7 @@ import blog.urls
 # Define the URL patterns for the main application.
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='about/')),
-    re_path(r'about/?', AboutView.as_view()),
+    path('', HomeView.as_view()),
     re_path(r'resume/?', include(resume.urls)),
     re_path(r'projects/?', include(projects.urls)),
     re_path(r'blog/?', include(blog.urls)),
