@@ -13,8 +13,10 @@
     <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}?{% now "U" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/jquery.jscrollpane.css' %}">
 </head>
 <body>
+
 <!-- Display a navigation bar in the top right hand of the screen to aid in website navigation -->
 <nav id="nav-bar">
     <a href="/"><div class="nav-button">HOME</div></a>
@@ -24,10 +26,7 @@
     <a href="/contact"><div class="nav-button">CONTACT</div></a>
 </nav>
 
-<!-- Create a main content area for the page. -->
-<div class="wrapper">
-    <!-- Define a block which child templates can override to display page-specific content. -->
-    {% block content %}{% endblock %}
-</div>
+<!-- Define a block which child templates can override to display page-specific content. -->
+{% block content %}{% endblock %}
 </body>
 </html>

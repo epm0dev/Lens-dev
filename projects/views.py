@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import View
 from django.shortcuts import get_object_or_404
+from lens.tasks import check_cached_repos
 from .models import Project
 
 
@@ -14,15 +15,13 @@ class ProjectHomeView(View):
 
     # Handle GET requests.
     def get(self, request):
-        # Build a list of tuples containing all of the projects in the database and their contents.
-        projects = []
-        for project in Project.objects.all():
-            projects.append((project, project.projects_content_related.all))
+        # TODO Description
+        check_cached_repos()
 
         # Create a context dictionary to populate the view's HTML template with.
         context = {
             'page_title': self.page_title,
-            'projects': projects,
+            'projects': Project.objects.all(),
         }
 
         # Return the view's template, rendered with the information in the context dictionary.
@@ -32,7 +31,7 @@ class ProjectHomeView(View):
 # A view class which displays a single project that is specified in a GET request by its ID.
 class ProjectView(View):
     # Define the path of the view's HTML template.
-    template_name = 'projects/project.html'
+    template_name = 'projects/project/page.html'
 
     # Handle GET requests.
     def get(self, request, project_id=None):

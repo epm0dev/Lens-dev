@@ -1,0 +1,25 @@
+<!-- An HTML template which represents a card containing a project and its related content. -->
+<div class="project-card flex-stack">
+    <!-- Create a header block containing the project's title and status. -->
+    <div class="title-block flex-row disable-select">
+        <h2 class="project-title">{{ project.title }}
+            <a target="_blank" href="/projects/{{ project.id }}">&#x2197
+            </a>
+        </h2>
+
+        <!-- Display a status badge containing the project's status. -->
+        <div class="status-badge">{{ project.status }}</div>
+    </div>
+
+    <!-- Create a container for the project card's content. -->
+    <div class="content-container flex-stack">
+        <!-- Display a section of content which contains the project's description. -->
+        {% include 'projects/content/description.html' %}
+
+        <!-- Display the projects contents, rendered using their appropriate templates. -->
+        {% for content in project.content %}
+            <div class="content-separator"></div>
+            {% include content.template %}
+        {% endfor %}
+    </div>
+</div>

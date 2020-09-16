@@ -1,172 +1,68 @@
-body, html {
-    height: auto;
+#list-column {
+    order: 1;
+    flex: 6;
+    padding-top: 60px;
 }
 
-/*
-.project-card-status-badge .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+#detail-column {
+    order: 2;
+    flex: 4;
+    max-width: 0;
+    padding-top: 60px;
 }
 
-.project-card-status-badge .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+.project-card {
+    margin-bottom: 60px;
+    background-color: var(--light-gray);
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+    width: 80%;
 }
 
-.project-card-status-badge:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-*/
-
-div.content-area {
-    max-height: none;
-    padding-bottom: 60px;
-}
-
-div.project-card {
-    display: block;
-    position: relative;
-    width: 1000px;
-    left: 50%;
-    margin: 60px 0 0 -500px;
-    background: var(--gray-dark);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 0 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-div.project-card-header-block {
-    display: flex;
-    position: relative;
+.title-block {
     width: 100%;
     height: 50px;
-    background: var(--green-light);
-    vertical-align: middle;
-    left: 50%;
-    margin: 0 0 0 -500px;
-    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+    background-color: var(--silver-sand);
 }
 
-span.project-card-header-text {
-    display: block;
-    width: 100%;
-    font-size: 24px;
-    line-height: 54px;
-    padding-left: 20px;
+.project-card > .title-block {
+    justify-content: space-between;
 }
 
-span.project-card-status-container {
-    display: block;
-    width: 200px;
-    line-height: 50px;
-    text-align: right;
+.project-title {
+    font-weight: normal;
+    margin: 0 0 0 20px;
 }
 
-span.project-card-status-badge {
-    display: inline;
-    font-size: 16px;
-    font-weight: bold;
-    vertical-align: middle;
-    border-radius: 12px;
+.status-badge {
     margin-right: 30px;
-    padding: 4px 10px 2px 10px;
-    position: relative;
-}
-
-div.project-card-description-container {
-    display: block;
-    flex-flow: wrap;
-    padding: 5px;
-    background: var(--gray-light);
-}
-
-div.card-content-github {
-    display: block;
-    flex-flow: wrap;
-    padding: 5px;
-}
-
-p.content-title {
-    padding: 0;
-    margin: 0;
-}
-
-div.content-separator {
-    width: 80%;
-    margin: 20px 10% 20px 10%;
-    alignment: center;
-    height: 6px;
-    background: var(--green-dark);
-    border-radius: 3px;
-    opacity: 0.6;
-}
-
-.card-bottom-gradient {
-    width: 1000px;
-    height: 100px;
-    background-image: linear-gradient(180deg, transparent, var(--gray-dark));
-    left: 50%;
-    margin: -100px 0 0 -500px;
-    z-index: 1;
-    display: block;
-    position: relative;
-}
-
-.card-content-container {
-    padding: 20px;
-}
-
-.card-content {
-    display: block;
+    font-size: 16px;
+    border-radius: 16px;
+    padding: 0 10px 2px 10px;
+    font-family: "Poppins", 'sans-serif';
     vertical-align: middle;
-    background: var(--gray-light);
+    border: 1px solid black;
 }
 
-.card-content .project-card-header-block {
-    display: inline-flex;
-    width: 960px;
-    vertical-align: middle;
-    left: 50%;
-    margin: 0 0 0 -480px;
+.content-item {
+    margin-top: 20px;
 }
 
-.card-content-icon-link {
-    display: block;
-    width: auto;
-    line-height: 50px;
-    padding-top: 3px;
+.content-container {
+    padding: 0 20px 20px 20px;
 }
 
-.card-content-header-text {
-    display: block;
-    width: 100%;
-    font-size: 24px;
-    line-height: 54px;
+.content-block {
+    border: 2px solid var(--silver-sand);
+    padding: 5px;
 }
 
-.project-description {
+.content-title {
+    font-weight: normal;
     margin: 0;
-    font-size: x-large;
+    padding-top: 6px;
 }
 
-.content-main-container {
-    margin: 0;
-    padding: 10px;
+body {
+    background: linear-gradient(to right, var(--roman-silver) 0%, var(--roman-silver) 60%, #000000 60%, var(--platinum) 60%, var(--platinum) 100%);
+    overflow: hidden;
 }

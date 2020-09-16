@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from itertools import chain
+from operator import attrgetter
 
 
 # A model which represents a projects to be displayed on the projects page of the website.
@@ -39,43 +41,57 @@ class Project(models.Model):
         elif self._status == self.Status.COMPLETED:
             return f'This project was completed on {self.completion_date}.'
 
+    # TODO Description
+    @property
+    def content(self):
+        return sorted(
+            chain(
+                self.projects_githubcontent_related.all(),
+            ),
+            key=attrgetter('display_priority')
+        )
+
     # Define the string representation of a project object.
     def __str__(self):
         return f'{self.title}'
 
 
+# Define the different types of content models.
+class ContentTypes(models.TextChoices):
+    GITHUB = 'github', _('Github Repository')
+
+
+# Define the possible display priorities for the content.
+class DisplayPriority(models.IntegerChoices):
+    LOW = -1, _('Low')  # The content should be displayed near the bottom of the project card.
+    MEDIUM = 0, _('Medium')  # The content should be displayed somewhere in the middle of the project card.
+    HIGH = 1, _('High')  # The content should be displayed near the top of the project card.
+
+
 # The base model for content to be displayed in blocks within a project card.
 class AbstractContent(models.Model):
-    # Define the possible display priorities for the content.
-    class DisplayPriority(models.IntegerChoices):
-        LOW = -1, _('Low')  # The content should be displayed near the bottom of the project card.
-        MEDIUM = 0, _('Medium')  # The content should be displayed somewhere in the middle of the project card.
-        HIGH = 1, _('High')  # The content should be displayed near the top of the project card.
-
     # Explicitly define an integer primary key for a project entry.
     id = models.IntegerField(primary_key=True, auto_created=True)
+
+    # TODO Description
+    content_type = models.CharField(max_length=20, choices=ContentTypes.choices)
+
+    # A field which indicates whether a content entry should be displayed at the start, in the middle (default), or at
+    # the end of a project card.
+    display_priority = models.IntegerField(choices=DisplayPriority.choices, default=0)
 
     # A field which represents a Many-To-One relationship from content entries to a single project entry.
     project = models.ForeignKey(
         Project,
         on_delete=models.CASCADE,
         # Set the field name from which a QueryList of a project's related content entries can be accessed.
-        related_name='%(app_label)s_content_related',
+        related_name='%(app_label)s_%(class)s_related',
     )
-
-    # A field which indicates whether a content entry should be displayed first, in the middle (default), or at the end
-    # of a project card.
-    display_priority = models.IntegerField(choices=DisplayPriority.choices, default=0)
 
     # Specify that this model class is abstract.
     class Meta:
         abstract = True
         ordering = ['-display_priority']
-
-
-# Define the different types of content models.
-class ContentTypes(models.TextChoices):
-    GITHUB = 'github', _('Github Repository')
 
 
 # TODO Further implement github content model.
@@ -91,7 +107,7 @@ class GithubContent(AbstractContent):
     # A property which returns the path of the template to render the content with.
     @property
     def template(self):
-        return 'projects/content-github.html'
+        return 'projects/content/github.html'
 
     # Define the string representation of a github content object.
     def __str__(self):

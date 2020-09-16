@@ -1,20 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 html {
-    --light-gray: #D2D6DA;
-    --platinum: #E9EBED;
-    --silver-sand: #B2B9BD;
+    /* Main website color palette */
+    --light-gray: #d2d6da;
+    --platinum: #e9ebed;
+    --silver-sand: #b2b9bd;
     --roman-silver: #868898;
+
+    /* Project status badge color palette */
+    --terra-cotta: #e07a5f;
+    --deep-champagne: #edb862;
+    --green-sheen: #81b29a;
+    --cool-gray: #9195b6;
 }
 
-html, body, .wrapper {
+html, body, .flex-wrapper {
     height: 100%;
     min-height: 550px;
     min-width: 1500px;
     margin: 0;
     padding: 0;
+    background: transparent;
 }
 
 h1, h2, h3, h4 {
@@ -39,7 +47,6 @@ a:link {
 
 .fa {
     padding: 0;
-    font-size: 30px;
     width: 50px;
     text-align: center;
     text-decoration: none;
@@ -50,7 +57,7 @@ a:link {
 }
 
 #nav-bar {
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     display: flex;
     justify-content: flex-end;
@@ -82,8 +89,38 @@ a:link {
    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-.wrapper {
-    z-index: 1;
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-layout {
+    flex: 1;
+    display: flex;
+    background-color: transparent;
+}
+
+.flex-column {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+.flex-row-centered-padded {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flex-stack {
     display: flex;
     flex-direction: column;
 }
