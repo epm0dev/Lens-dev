@@ -14,6 +14,8 @@ html {
     --deep-champagne: #edb862;
     --green-sheen: #81b29a;
     --cool-gray: #9195b6;
+
+    scroll-behavior: smooth;
 }
 
 html, body, .flex-wrapper {
@@ -79,7 +81,7 @@ a:link {
 
 .nav-button:hover {
     background: var(--roman-silver);
-    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .disable-select {

@@ -7,14 +7,14 @@
 
     <!-- Display a list of project cards in one column and a column which contains the details of the focused project. -->
     <div class="flex-wrapper">
-        <div class="flex-column-layout scroll-pane">
+        <div class="flex-column-layout">
             <div class="flex-column" id="list-column">
                 <!-- Display a card containing information about each project. -->
                 {% for project in projects %}
                     {% include 'projects/project/card.html' %}
                 {% endfor %}
             </div>
-            <div class="flex-column" id="detail-column">
+            <div class="flex-column collapsed" id="detail-column">
                 <!-- Display each project's details. -->
                 {% for project in projects %}
                     {% include 'projects/project/detail.html' %}
@@ -23,15 +23,10 @@
         </div>
     </div>
 
-    <div class="back-to-top">Back To Top <span class="fa fa-angle-double-up"></span></div>
-
     <!-- Load jQuery and a script to dynamically set the status badge background color for each project card. -->
-    <script src="{% static 'javascript/jquery-3.5.1.js' %}"></script>
-    <script src="{% static 'javascript/jquery-color-2.1.2.js' %}"></script>
-    <script src="{% static 'javascript/jquery.mousewheel.js' %}"></script>
-    <script src="{% static 'javascript/jquery.jscrollpane.js' %}"></script>
-    <script src="{% static 'javascript/status-badge-color.js' %}"></script>
-    <script src="{% static 'javascript/no-scrollbar.js' %}"></script>
-
-    <script src="{% static 'javascript/detail-expand-contract.js' %}"></script>
+    <script src="{% static 'javascript/lib/jquery-3.5.1.js' %}"></script>
+    <script src="{% static 'javascript/lib/jquery.mousewheel.js' %}"></script>
+    <script src="{% static 'javascript/lib/jquery.jscrollpane.js' %}"></script>
+    <script src="{% static 'javascript/lib/mwheelIntent.js' %}"></script>
+    <script src="{% static 'javascript/projects.js' %}"></script>
 {% endblock %}
