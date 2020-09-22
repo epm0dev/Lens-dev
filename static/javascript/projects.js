@@ -42,7 +42,7 @@ $(document).ready(function () {
 
     // TODO Comments ...
     $('.see-more-text').each(function (index, element) {
-        $(element).addClass('not-hovering')
+        $(element).addClass('not-hovering');
         $(element).mouseenter(function () {
             $(element).addClass('hovering').removeClass('not-hovering');
         }).mouseleave(function () {
@@ -51,8 +51,8 @@ $(document).ready(function () {
             detailColumn.addClass('expanded').removeClass('collapsed');
 
             let projectCard = $(element).parent().parent().parent();
-            $(".order-first").removeClass('order-first');
-            projectCard.addClass('order-first');
+            $(".focused").removeClass('focused');
+            projectCard.addClass('focused');
 
             let projectId = projectCard.data('projectId');
             let currentProjectId = detailColumn.data('currentProjectId');
@@ -73,7 +73,7 @@ $(document).ready(function () {
                 shadowBox.addClass('hide-shadow').removeClass('show-shadow');
                 detailColumn.addClass('collapsed').removeClass('expanded');
                 detailColumn.data('currentProjectId', -1);
-                $(".order-first").removeClass('order-first');
+                $(".focused").removeClass('focused');
             }, 300);
         });
 

@@ -1,5 +1,6 @@
 <!-- An HTML template which represents a card containing a project and its related content. -->
 <!--suppress HtmlUnknownAnchorTarget -->
+<div id="card{{ project.id }}" class="card-offset"></div>
 <div class="project-card flex-stack" data-project-id="{{ project.id }}">
     <!-- Create a header block containing the project's title and status. -->
     <div class="title-block flex-row disable-select">
@@ -23,7 +24,7 @@
 
         <!-- Display text that, when clicked, shows more details about the project. -->
         <div class="see-more">
-            <a class="see-more-text not-hovering" href="#">See More >></a>
+            <a class="see-more-text not-hovering" href="#card{{ project.id }}">See More >></a>
         </div>
     </div>
 </div>

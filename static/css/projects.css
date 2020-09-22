@@ -1,8 +1,8 @@
 #list-column {
     order: 1;
     flex: 6;
-    padding-top: 60px;
     background-color: var(--roman-silver);
+    padding-bottom: 60px;
 }
 
 #detail-column {
@@ -43,14 +43,13 @@
 }
 
 .project-card {
-    margin-bottom: 60px;
     background-color: var(--light-gray);
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
     width: 80%;
+    margin: -5px 0;
 }
 
-.order-first {
-    order: -1;
+.focused {
     z-index: 1;
 }
 
@@ -120,11 +119,18 @@
 }
 
 .detail-container {
+    position: sticky;
     display: block;
     top: 60px;
     width: 80%;
     transition: opacity .3s linear;
     max-height: 100%;
+}
+
+.card-offset {
+    height: 60px;
+    margin-top: -5px;
+    background-color: transparent;
 }
 
 .hide {
@@ -144,6 +150,7 @@
     font-size: xx-large;
     align-self: flex-start;
     font-weight: lighter;
+    cursor: pointer;
 }
 
 .status-tooltip {
