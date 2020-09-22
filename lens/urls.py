@@ -29,6 +29,6 @@ urlpatterns = [
     path('', HomeView.as_view()),
     re_path(r'resume/?', include(resume.urls)),
     re_path(r'projects/?', include(projects.urls)),
-    re_path(r'blog/?', include(blog.urls)),
+    # re_path(r'blog/?', include(blog.urls)),
     re_path(r'contact/?', include(contact.urls)),
 ]

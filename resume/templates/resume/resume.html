@@ -1,6 +1,119 @@
 <!-- Extend the base page template and override its content block. -->
 {% extends 'lens/base.html' %}
 {% block content %}
-    <!-- Display a small card which indicates that the page does not have any content yet. -->
-    <div id="coming-soon-card">Coming Soon</div>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/resume.css' %}?{% now "U" %}">
+
+    <!-- TODO Set up download button. -->
+    <!-- <a href="/resume/resume.pdf" target="_blank">DOWNLOAD</a> -->
+
+    <div class="flex-wrapper">
+        <div class="flex-column-layout">
+            <div class="flex-column" id="resume-content">
+                <div class="flex-stack resume-section">
+                    <div class="section-header flex-row">
+                        <h2 class="section-title">Education</h2>
+                    </div>
+                    <div class="flex-stack section-content">
+                        <h4 class="subsection-header">North Carolina State University – Raleigh, NC</h4>
+                        <ul class="subsection-list">
+                            <li>
+                                <p>Non-Degree Studies (NDS) program</p>
+                                <ul>
+                                    <li>Fall 2017: Math 242 (Calculus III)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Engineering First Year Program (Mechanical Engineering Intent)</p>
+                                <ul>
+                                    <li>Fall 2018: Chemistry 101 & 102, Engineering 101, Computer Science 113 (MATLAB), Economics 205, Math 341 (Differential Equations)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Mechanical Engineering</p>
+                                <ul>
+                                    <li>Fall 2019: Mechanical and Aerospace Engineering 200 (Intro to ME Design) and 206 (Statics), Material Sciences and Engineering 201, Physics 208 and 209 (Physics 2 Lecture and Lab), Statistics 370</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Mechanical Engineering, Computer Programming minor</p>
+                                <ul>
+                                    <li>Spring 2020: Mechanical and Aerospace Engineering 208 (Dynamics), 214 (Solid Mechanics) and 305 (Lab I), Graphic Communications 120 (Foundations of Graphics), Computer Science 216 (Programming Concepts – Java)</li>
+                                    <li>Summer 2020: Computer Science 230 (C & Software Tools), Math 225 (Foundations of Advanced Math)</li>
+                                    <li>Fall 2020 (Ongoing): Computer Science 226 (Discrete Math), 236 (Computer Organization & Assembly), Math 405 (Linear Algebra), Statistics 307 (Intro to Statistics Programming – SAS), 312 (Intro to Statistics II), 421 (Intro to Math Statistics I)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br/>
+                        <h4 class="subsection-header">Wake Technical Community College – Wake County, NC</h4>
+                        <ul class="subsection-list">
+                            <li>
+                                <p>Visiting Student Program</p>
+                                <ul>
+                                    <li>Spring 2019: History 132, Anthropology 240 (Archaeology)</li>
+                                    <li>Summer 2019: Computer Science 151 (Java), Music 110 (Music Appreciation), Physical Education 110, Physics 251</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-stack resume-section">
+                    <div class="section-header flex-row">
+                        <h2 class="section-title">Work Experience</h2>
+                    </div>
+                    <div class="flex-stack section-content">
+                        <h4 class="subsection-header">Cobble Hill Bed & Biscuit (August 2016 – July 2018)</h4>
+                        <p class="job-title"><em>Kennel Technician</em></p>
+                        <ul class="subsection-list">
+                            <li>Animal care and enrichment; facility upkeep; train new employees on operating procedures</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-stack resume-section">
+                    <div class="section-header flex-row">
+                        <h2 class="section-title">Volunteering & Community Service</h2>
+                    </div>
+                    <div class="flex-stack section-content">
+                        <h4 class="subsection-header">Melanoma Education Initiative (2011-2017)</h4>
+                        <ul class="subsection-list">
+                            <li>
+                                <p>Support this 501(c)(3) public charity in its efforts to educate the public (primarily middle school and high school students) about prevention and early detection of melanoma, the deadliest form of skin cancer</p>
+                            </li>
+                            <li>
+                                <p>Assist with planning and execution of fundraising events (e.g., silent auction; annual 5k race)</p>
+                            </li>
+                            <li>
+                                <p>Participate in community events</p>
+                            </li>
+                            <li>
+                                <p>Redesigned informational brochure (including graphic design)</p>
+                            </li>
+                        </ul>
+                        <br/>
+                        <h4 class="subsection-header">Duke Lemur Center (July 2016)</h4>
+                        <p class="job-title"><em>Camp Counselor</em></p>
+                        <ul class="subsection-list">
+                            <li>Counselor-in-Training at the Duke Lemur Center Summer Science Camp</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-stack resume-section">
+                    <div class="section-header flex-row">
+                        <h2 class="section-title">Interests and Hobbies</h2>
+                    </div>
+                    <div class="flex-stack section-content">
+                        <ul class="subsection-list">
+                            <li>
+                                <p>Technology – programming, building computers</p>
+                            </li>
+                            <li>
+                                <p>Data analysis and statistics</p>
+                            </li>
+                            <li>Digital music production</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
