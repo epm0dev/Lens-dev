@@ -8,6 +8,8 @@ My personal resume and portfolio website.
 - Complete project page contents
 - Complete resume page
 - Complete contact page
+- Complete project model
+- Complete project content model
 - Potential blog page?
 
 ### Tasks
