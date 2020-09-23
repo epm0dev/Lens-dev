@@ -48,7 +48,8 @@ class Project(models.Model):
             chain(
                 self.projects_githubcontent_related.all(),
             ),
-            key=attrgetter('display_priority')
+            key=attrgetter('display_priority'),
+            reverse=True
         )
 
     # Define the string representation of a project object.

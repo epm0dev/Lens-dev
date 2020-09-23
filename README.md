@@ -15,9 +15,8 @@ My personal resume and portfolio website.
 - Project description contents
 - Project github content
 - Update projects.admin models to allow for more intuitive project creation and editing (inlines for content models in change project view)
-- Fix github badge in content block header
 - Fix project page scroll padding so that the bottom of the project card above is not in view when a card's see more button is clicked
-- Download resume button on resume page (and on home page?)
+- Add button to download resume on resume page (and on home page?)
 
 
 ### Future Tasks
@@ -25,7 +24,7 @@ My personal resume and portfolio website.
 
 
 ### Complete Before Deployment
-- Serve static files via CDN
+- Serve static files with CDN
 - Optimize CSS and HTML
-- Black box test website
+- Black box tests
 - Double check padding and margins to ensure proper alignment and size of content

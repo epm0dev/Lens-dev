@@ -21,6 +21,7 @@ class ProjectHomeView(View):
         # Create a context dictionary to populate the view's HTML template with.
         context = {
             'page_title': self.page_title,
+            # TODO Sort projects here. (Completed -> In Progress -> Paused -> Future)
             'projects': Project.objects.all(),
         }
 
