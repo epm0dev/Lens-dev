@@ -1,15 +1,10 @@
 from django.contrib import admin
-from .models import Project, AbstractContent, GithubContent
+from .models import Project, GithubContent
 from django.utils import timezone
 
 
-# class ContentInline(admin.TabularInline):
-#     model = AbstractContent
-#     extra = 1
-
-
 # An admin model which allows superusers to add, view, edit and delete project entries in the database.
-@admin.register(Project)
+@admin.register(Project, site=admin.site)
 class ProjectAdmin(admin.ModelAdmin):
     # Set the value to display in the case of an empty field.
     empty_value_display = '-empty-'
@@ -47,14 +42,9 @@ class ProjectAdmin(admin.ModelAdmin):
     # Add the ability to filter projects on the project admin page by status.
     list_filter = ('_status',)
 
-    # TODO Description
-    # inlines = [
-    #     ContentInline,
-    # ]
-
 
 # An admin model which allows superusers to add, view, edit and delete github content entries in the database.
-@admin.register(GithubContent)
+@admin.register(GithubContent, site=admin.site)
 class GithubContentAdmin(admin.ModelAdmin):
     # Set the value to display in the case of an empty field.
     empty_value_display = '-empty-'

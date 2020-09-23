@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django_ses.views import dashboard
 
 
-# TODO Create any admin models needed for the resume application.
+# TODO Documentation
+admin.site.register_view('django-ses', dashboard, 'Django SES Stats')

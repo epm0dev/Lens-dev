@@ -34,17 +34,19 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'django.contrib.admin.apps.SimpleAdminConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'background_task',
+    'adminplus',
+    'django_ses',
     'resume',
     'projects',
     'blog',
     'contact',
-    'background_task',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+# TODO Documentation
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_SES_ACCESS_KEY_ID = ''
+AWS_SES_SECRET_ACCESS_KEY = ''
+AWS_SES_RETURN_PATH = ''
+AWS_SES_REGION_NAME = ''
+AWS_SES_REGION_ENDPOINT = ''

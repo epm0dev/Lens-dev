@@ -1,6 +1,68 @@
 <!-- Extend the base page template and override its content block. -->
 {% extends 'lens/base.html' %}
 {% block content %}
-    <!-- Display a small card which indicates that the page does not have any content yet. -->
-    <div id="coming-soon-card">Coming Soon</div>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}?{% now "U" %}">
+
+    <div class="flex-wrapper">
+        <div class="flex-column-layout">
+            <div class="flex-column" id="contact-form-content">
+                {% if messages %}
+                    <div id="message-overlay">
+                        {% for message in messages %}
+                            <div class="flex-stack message">
+                                <p>{{ message }}</p>
+                                <a class="close" href="/contact/">X Close</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div id="contact-form" class="flex-stack">
+                    <h1>CONTACT ME.</h1>
+                    <form action="/contact/submit/" method="post" class="flex-stack">
+                        {% csrf_token %}
+                        <div class="flex-row-centered-padded">
+                            <div class="flex-stack">
+                                <label for="fname"><span class="required">*</span>First Name:</label>
+                                <input id="fname" type="text" name="first-name" required placeholder="John">
+                            </div>
+                            <div class="sep"></div>
+                            <div class="flex-stack">
+                                <label for="lname"><span class="required">*</span>Last Name:</label>
+                                <input id="lname" type="text" name="last-name" required placeholder="Doe">
+                            </div>
+                            <div class="sep"></div>
+                            <div class="flex-stack">
+                                <label for="minitial">MI:</label>
+                                <input id="minitial" type="text" name="middle-initial" maxlength="1" size="1" placeholder="S">
+                            </div>
+                        </div>
+                        <div class="flex-row-centered-padded">
+                            <div class="flex-stack">
+                                <label for="email"><span class="required">*</span>Email:</label>
+                                <input id="email" type="email" name="email-address" required placeholder="email@example.com">
+                            </div>
+                            <div class="sep"></div>
+                            <div class="flex-stack">
+                                <label for="phone">Phone Number:</label>
+                                <input id="phone" type="tel" name="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                            </div>
+                        </div>
+                        <div class="flex-row-centered-padded">
+                            <div class="flex-stack">
+                                <label for="message"><span class="required">*</span>Message:</label>
+                                <textarea id="message" name="message" required spellcheck="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex-row-centered-padded">
+                            <button type="submit">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'javascript/lib/jquery-3.5.1.js' %}"></script>
+    <script src="{% static 'javascript/contact.js' %}"></script>
 {% endblock %}
