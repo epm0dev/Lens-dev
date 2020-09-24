@@ -32,3 +32,4 @@ My personal resume and portfolio website.
 - Double check padding and margins to ensure proper alignment and size of content
 - Setup email DKIM for django-ses (https://github.com/django-ses/django-ses)
 - AWS IAM Setup
+- Complete Django deployment checklist
