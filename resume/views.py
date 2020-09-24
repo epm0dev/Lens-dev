@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.base import View
 import mimetypes
-from django.conf.urls.static import static
 
 
 # A view class which displays the contents of my resume with formatting that matches the rest of the website.
