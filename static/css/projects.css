@@ -244,10 +244,20 @@ body {
     margin: 0;
 }
 
-.commit-info > span > div {
-    width: auto;
-}
-
 .commit-info > .flex-stack {
     margin-right: 20px;
+}
+
+.description-container {
+    background-color: var(--platinum);
+    border: 2px solid var(--silver-sand);
+    width: 100%;
+    align-items: center;
+}
+
+.description-container > h4 {
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: normal;
+    font-size: large;
+    margin: 20px 10%;
 }

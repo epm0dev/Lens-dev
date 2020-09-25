@@ -4,5 +4,9 @@
     <h2 class="content-title">Project Description</h2>
 {% endblock %}
 {% block main_content %}
-    <p>{{ project.description }}</p>
+    <div class="flex-row-centered-padded">
+        <div class="flex-stack description-container">
+            <h4>{{ project.description }}</h4>
+        </div>
+    </div>
 {% endblock %}

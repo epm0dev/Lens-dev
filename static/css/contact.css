@@ -93,17 +93,33 @@ form {
 }
 
 .message {
-    padding: 10px;
+    background-color: var(--platinum);
+    border: 2px solid var(--silver-sand);
+    width: 400px;
+    align-items: center;
+}
+
+.message > h2 {
     background-color: var(--silver-sand);
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin: 0;
+    text-align: left;
+    width: 360px;
 }
 
 .message > p {
-    margin: 0;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    width: 80%;
+    text-align: left;
 }
 
 .close {
     align-self: flex-end;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 0;
     font-family: "Kumbh Sans", sans-serif;
+    padding: 0 10px 10px 0;
 }

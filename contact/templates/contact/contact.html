@@ -11,6 +11,7 @@
                     <div id="message-overlay">
                         {% for message in messages %}
                             <div class="flex-stack message">
+                                <h2 class="message-title">Contact Form Submission</h2>
                                 <p>{{ message }}</p>
                                 <a class="close" href="/contact/">X Close</a>
                             </div>
@@ -51,7 +52,7 @@
                         <div class="flex-row-centered-padded">
                             <div class="flex-stack">
                                 <label for="message"><span class="required">*</span>Message:</label>
-                                <textarea id="message" name="message" required spellcheck="true"></textarea>
+                                <textarea id="message" name="message" required spellcheck="true" placeholder="Enter the contents of your message"></textarea>
                             </div>
                         </div>
                         <div class="flex-row-centered-padded">
