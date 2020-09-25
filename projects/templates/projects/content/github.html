@@ -1,8 +1,42 @@
 {% extends 'projects/content/base.html' %}
 {% block header %}
-    <a class="fa fa-github fa-2x"></a>
+    <a class="fa fa-github fa-2x" target="_blank" href="{{ content.repository_url }}"></a>
     <h2 class="content-title">{{ content.content_type.label }}</h2>
 {% endblock %}
 {% block main_content %}
-    <p>Under construction</p>
+    {% for repo in repos %}
+        {% if repo.url == content.repository_url %}
+            <div class="flex-row-centered-padded">
+                <div class="flex-stack repo">
+                    <div class="flex-stack repo-commit">
+                        <h3>Latest Commit</h3>
+                        <div class="flex-row commit-info">
+                            <span>Commit <a class="sha" target="_blank" href="{{ repo.latest_commit.url }}">{{ repo.latest_commit.sha }}&#8599;</a>
+                                 by {{ repo.latest_commit.author }} on {{ repo.latest_commit.date }}
+                                <div></div>
+                                <a class="item-link" target="_blank" href="{{ item.url }}">View On Github &#8599;</a>
+                            </span>
+                        </div>
+                        <div class="flex-row commit-info">
+                            <p>{{ repo.latest_commit.message }}</p>
+                        </div>
+                    </div>
+                    <div class="flex-stack repo-contents">
+                        <h3>Contents</h3>
+                        {% for item in repo.root_dir %}
+                            <div class="flex-row repo-item">
+                                {% if item.type == 'dir' %}
+                                    <div class="fa fa-folder-o"></div>
+                                {% elif item.type == 'file' %}
+                                    <div class="fa fa-file-o"></div>
+                                {% endif %}
+                                <p>{{ item.path }}</p>
+                                <a class="item-link" target="_blank" href="{{ item.url }}">View On Github &#8599;</a></div>
+                            <div class="repo-item-separator"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
 {% endblock %}

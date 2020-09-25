@@ -162,3 +162,92 @@
 body {
     overflow: no-display;
 }
+
+.fa {
+    z-index: 4;
+}
+
+.repo {
+    width: 100%;
+}
+
+.repo > .flex-stack {
+    background-color: var(--platinum);
+    border: 2px solid var(--silver-sand);
+}
+
+.repo-contents {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.repo-item > .fa:hover {
+    opacity: 1;
+}
+
+.repo-item {
+    width: 100%;
+    z-index: 4;
+    transition: background-color 0.2s linear;
+}
+
+.repo-item:hover {
+    background-color: var(--light-gray);
+}
+
+.repo-item > p {
+    flex: 2;
+}
+
+.repo-item-separator {
+    height: 2px;
+    width: 100%;
+    background-color: var(--light-gray);
+}
+
+.item-link, .sha {
+    z-index: 4;
+    opacity: 0.6;
+    transition: opacity 0.2s linear;
+    margin-right: 15px;
+    font-family: "Poppins", 'sans-serif';
+}
+
+.sha {
+    margin: 0;
+}
+
+.item-link:hover, .sha:hover {
+    opacity: 1;
+}
+
+.repo-commit {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.repo-commit > h3, .repo-contents > h3 {
+    background-color: var(--silver-sand);
+    text-align: left;
+    padding: 4px 0 0 15px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+}
+
+.commit-info {
+    font-family: "Poppins", 'sans-serif';
+    margin: 20px 20px 0 20px;
+}
+
+.commit-info > p {
+    margin: 0;
+}
+
+.commit-info > span > div {
+    width: auto;
+}
+
+.commit-info > .flex-stack {
+    margin-right: 20px;
+}

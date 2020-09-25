@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import View
 from django.shortcuts import get_object_or_404
-from lens.tasks import check_cached_repos
+from lens.tasks import check_cached_repos, get_repos
 from .models import Project
 
 
@@ -21,8 +21,8 @@ class ProjectHomeView(View):
         # Create a context dictionary to populate the view's HTML template with.
         context = {
             'page_title': self.page_title,
-            # TODO Sort projects here. (Completed -> In Progress -> Paused -> Future)
             'projects': Project.objects.all(),
+            'repos': get_repos()
         }
 
         # Return the view's template, rendered with the information in the context dictionary.

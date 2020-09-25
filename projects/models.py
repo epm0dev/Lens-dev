@@ -59,7 +59,7 @@ class Project(models.Model):
 
 # Define the different types of content models.
 class ContentTypes(models.TextChoices):
-    GITHUB = 'github', _('Github Repository')
+    GITHUB = 'github', _('Github Repository Preview')
 
 
 # Define the possible display priorities for the content.

@@ -5,18 +5,26 @@ My personal resume and portfolio website.
 ---
 
 ### Main Tasks
-- Complete project page contents
-- Complete project model
-- Complete project content model
-
+- Finalize project description design
+- Finalize project model
+- Finalize page designs
+    + Home
+    + Resume
+    + Projects
+    + Contact
+- Finalize code documentation
+    + lens/
+    + contact/
+    + projects/
+    + resume/
+    + static/css/
+    + static/javascript/
+- Replace filler content with final content
 
 ### Tasks
-- Project description contents
-- Project github content (repository caching, template, etc.)
-- Update projects.admin models to allow for more intuitive project creation and editing (inlines for content models in change project view)
+- Update projects.admin models to allow for more intuitive project creation and editing (inlines for content models in change project view), use AdminPlus functionality
 - Fix project page scroll padding so that the bottom of the project card above is not in view when a card's see more button is clicked
 - Add button to download resume on resume page (and on home page?)
-- Finalize contact page message modal popup styling
 
 
 ### Future Tasks
@@ -33,3 +41,4 @@ My personal resume and portfolio website.
 - Setup email DKIM for django-ses (https://github.com/django-ses/django-ses)
 - AWS IAM Setup
 - Complete Django deployment checklist
+- Create deployment script
