@@ -21,9 +21,9 @@ class ContactView(View):
         return render(request, self.template_name, context)
 
     # Handle POST requests.
-    # TODO Documentation
     @staticmethod
     def post(request):
+        # TODO Documentation
         first_name = request.POST.get('first-name')
         last_name = request.POST.get('last-name')
         minitial = request.POST.get('middle-initial')

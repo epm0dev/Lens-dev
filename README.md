@@ -19,6 +19,8 @@ My personal resume and portfolio website.
     + static/css/
     + static/javascript/
 - Replace filler content with final content
+    + Home Page
+    + Projects Page
 
 ### Tasks
 - Update projects.admin models to allow for more intuitive project creation and editing (inlines for content models in change project view), use AdminPlus functionality
