@@ -10,6 +10,9 @@ class ResumeView(View):
     # Define the title of the view's page.
     page_title = 'Resume'
 
+    # Define the path from which to download the resume page's stylesheet.
+    stylesheet = 'http://d3v7w7xrm71xax.cloudfront.net/resume.min.css'
+
     # Define the path from which to download the resume.
     download_path = 'http://d3v7w7xrm71xax.cloudfront.net/Ethan_Mancini_Resume.pdf'
 
@@ -18,6 +21,7 @@ class ResumeView(View):
         # Create a context dictionary to populate the view's HTML template with.
         context = {
             'page_title': self.page_title,
+            'stylesheet': self.stylesheet,
             'download_path': self.download_path
         }
 
