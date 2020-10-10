@@ -1,22 +1,31 @@
 <!-- Extend the base page template and override its content block. -->
 {% extends 'lens/base.html' %}
 {% block content %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/resume.css' %}?{% now "U" %}">
+    <link rel="stylesheet" href="http://d3v7w7xrm71xax.cloudfront.net/resume.min.css">
 
-    <a href="http://d3v7w7xrm71xax.cloudfront.net/Ethan_Mancini_Resume.pdf" download>
-        <div class="download-button">DOWNLOAD</div>
+    <!-- Display a fixed-position download button in the bottom right hand corner of the window. -->
+    <a href="{{ download_path }}" download>
+        <div class="nav-button" id="download-button">DOWNLOAD</div>
     </a>
 
+    <!-- Wrap the contents of the resume page in a column layout. -->
     <div class="flex-wrapper">
         <div class="flex-column-layout">
+            <!-- The main content area of the resume page, where resume sections are displayed. -->
             <div class="flex-column" id="resume-content">
+                <!-- Display a resume section containing education information -->
                 <div class="flex-stack resume-section">
+                    <!-- Display the section's title -->
                     <div class="section-header flex-row">
                         <h2 class="section-title">Education</h2>
                     </div>
+
+                    <!-- Display the section's content -->
                     <div class="flex-stack section-content">
+                        <!-- Display a header for a subsection of education completed at NCSU -->
                         <h4 class="subsection-header">North Carolina State University – Raleigh, NC</h4>
+
+                        <!-- Display the list contents of the subsection -->
                         <ul class="subsection-list">
                             <li>
                                 <p>Non-Degree Studies (NDS) program</p>
@@ -46,7 +55,11 @@
                             </li>
                         </ul>
                         <br/>
+
+                        <!-- Display a header for a subsection of education completed at WTCC -->
                         <h4 class="subsection-header">Wake Technical Community College – Wake County, NC</h4>
+
+                        <!-- Display the list contents of the subsection -->
                         <ul class="subsection-list">
                             <li>
                                 <p>Visiting Student Program</p>
@@ -58,24 +71,42 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- Display a resume section containing work experience information -->
                 <div class="flex-stack resume-section">
+                    <!-- Display the section's title -->
                     <div class="section-header flex-row">
                         <h2 class="section-title">Work Experience</h2>
                     </div>
+
+                    <!-- Display the section's content -->
                     <div class="flex-stack section-content">
+                        <!-- Display a header for a subsection containing a job -->
                         <h4 class="subsection-header">Cobble Hill Bed & Biscuit (August 2016 – July 2018)</h4>
+
+                        <!-- Display the title of the position -->
                         <p class="job-title"><em>Kennel Technician</em></p>
+
+                        <!-- Display a list of job responsibilities -->
                         <ul class="subsection-list">
                             <li>Animal care and enrichment; facility upkeep; train new employees on operating procedures</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- Display a resume section containing volunteering and community service information -->
                 <div class="flex-stack resume-section">
+                    <!-- Display the section's title -->
                     <div class="section-header flex-row">
                         <h2 class="section-title">Volunteering & Community Service</h2>
                     </div>
+
+                    <!-- Display the section's content -->
                     <div class="flex-stack section-content">
+                        <!-- Display a header for a subsection containing a volunteer activity -->
                         <h4 class="subsection-header">Melanoma Education Initiative (2011-2017)</h4>
+
+                        <!-- Display a list of volunteer activities/responsibilities -->
                         <ul class="subsection-list">
                             <li>
                                 <p>Support this 501(c)(3) public charity in its efforts to educate the public (primarily middle school and high school students) about prevention and early detection of melanoma, the deadliest form of skin cancer</p>
@@ -85,18 +116,30 @@
                             <li>Redesigned informational brochure (including graphic design)</li>
                         </ul>
                         <br/>
+
+                        <!-- Display a header for a subsection containing a volunteer activity -->
                         <h4 class="subsection-header">Duke Lemur Center (July 2016)</h4>
+
+                        <!-- Display the title of the position -->
                         <p class="job-title"><em>Camp Counselor</em></p>
+
+                        <!-- Display a list of volunteer activities/responsibilities -->
                         <ul class="subsection-list">
                             <li>Counselor-in-Training at the Duke Lemur Center Summer Science Camp</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- Display a resume section containing interest and hobby information -->
                 <div class="flex-stack resume-section">
+                    <!-- Display the section's title -->
                     <div class="section-header flex-row">
                         <h2 class="section-title">Interests and Hobbies</h2>
                     </div>
+
+                    <!-- Display the section's content -->
                     <div class="flex-stack section-content">
+                        <!-- Display a list of hobbies and interests -->
                         <ul class="subsection-list">
                             <li>Technology – programming, building computers, Raspberry Pi</li>
                             <li>Data analysis and statistics</li>

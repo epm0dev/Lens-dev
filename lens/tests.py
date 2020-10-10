@@ -1,11 +1,11 @@
 from django.test import TestCase
 
 
-class ProjectPageTestCase(TestCase):
+class HomePageTestCase(TestCase):
     def setUp(self):
         pass
 
 
-class ProjectModelsTestCase(TestCase):
+class RepoCachingTestCase(TestCase):
     def setUp(self):
         pass

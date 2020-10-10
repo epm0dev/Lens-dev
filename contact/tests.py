@@ -2,8 +2,13 @@ from django.core import mail
 from django.test import TestCase
 
 
+class ContactPageTestCase(TestCase):
+    def setUp(self):
+        pass
+
+
 # TODO Documentaion
-class EmailTest(TestCase):
+class SendEmailTestCase(TestCase):
     def test_send_email(self):
         mail.send_mail(
             'That’s your subject', 'That’s your message body',

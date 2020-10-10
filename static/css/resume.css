@@ -1,13 +1,36 @@
+/* Additional styling for the resume page */
+
+/* Main div that contains all of the resume sections */
 #resume-content {
     padding-top: 60px;
     background-color: var(--roman-silver);
     flex: 1;
 }
 
+/* Add to and override some nav-button styling to create a resume download button */
+#download-button {
+    position: fixed;
+    bottom: 1.5%;
+    right: 1.25%;
+    height: 35px;
+    padding-top: 2px;
+    width: 7%;
+    transition: all 0.2s linear;
+    background-color: var(--light-gray);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Change the download button'sbackground color on hover */
+#download-button:hover {
+    background-color: var(--silver-sand);
+}
+
+/* Adjust br element margins to play more nicely with the margins/padding of other resume page elements */
 br {
     margin-top: 30px;
 }
 
+/* Individual sections of the resume, containing a section header and section content */
 .resume-section {
     background-color: var(--light-gray);
     width: 80%;
@@ -16,56 +39,35 @@ br {
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Section header blocks which contain sectino titles */
 .section-header {
     width: 100%;
     height: 50px;
     background-color: var(--silver-sand);
 }
 
+/* Section title text (e.g. Education) */
 .section-title {
     font-weight: normal;
     margin: 0 0 0 20px;
 }
 
+/* The main content are of a resume section, where information is displayed */
 .section-content {
     padding: 30px;
 }
 
-.subsection-header {
+/* Disable margins for subsection headers and lists */
+.subsection-header, .subsection-list {
     margin: 0;
 }
 
-.subsection-list {
-    margin: 0;
-}
-
+/* Disable the bottom margin of p elements nested in a list item in a subsection list */
 .subsection-list > li > p {
     margin-bottom: 0;
 }
 
+/* Disable the top margin of job titles */
 .job-title {
     margin-top: 0;
-}
-
-.download-button {
-    position: fixed;
-    bottom: 1.5%;
-    right: 1.25%;
-    height: 35px;
-    padding-top: 2px;
-    width: 7%;
-    z-index: 3;
-    font-size: large;
-    font-family: "Kumbh Sans", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    transition: all 0.2s linear;
-    background-color: var(--light-gray);
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
-}
-
-.download-button:hover {
-    background-color: var(--silver-sand);
 }
