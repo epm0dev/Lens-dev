@@ -13,6 +13,12 @@ class ProjectHomeView(View):
     # Define the title of the view's page.
     page_title = 'Projects'
 
+    # Define the paths of JavaScript files to be used ti render the page.
+    scripts = [
+        'http://d3v7w7xrm71xax.cloudfront.net/jquery-3.5.1.min.js',
+        'http://d3v7w7xrm71xax.cloudfront.net/resize-sensor-1.2.2.js',
+    ]
+
     # Handle GET requests.
     def get(self, request):
         # TODO Description
@@ -21,6 +27,7 @@ class ProjectHomeView(View):
         # Create a context dictionary to populate the view's HTML template with.
         context = {
             'page_title': self.page_title,
+            'scripts': self.scripts,
             'projects': Project.objects.all(),
             'repos': get_repos()
         }
