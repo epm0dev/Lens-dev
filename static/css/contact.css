@@ -59,8 +59,11 @@ button {
     background-color: var(--silver-sand);
     font-family: "Kumbh Sans", sans-serif;
     font-weight: normal;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     cursor: pointer;
+    width: 20%;
+    transition: all 0.2s linear;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
@@ -105,21 +108,35 @@ form {
     line-height: 40px;
     padding: 0 20px;
     margin: 0;
-    text-align: left;
+    text-align: center;
     width: 360px;
+    font-weight: normal;
 }
 
 .message > p {
     margin: 10px 0 0 0;
     padding: 10px;
-    width: 80%;
-    text-align: left;
+    text-align: center;
 }
 
 .close {
     align-self: flex-end;
     cursor: pointer;
-    margin: 0;
     font-family: "Kumbh Sans", sans-serif;
-    padding: 0 10px 10px 0;
+    margin: 0 10px 10px 0;
+    transition: all 0.2s linear;
+}
+
+.close:hover {
+    opacity: 0.6;
+}
+
+input, textarea {
+    font-size: large;
+    font-family: "Kumbh Sans", sans-serif;
+    padding: 5px;
+}
+
+input {
+    height: 20px;
 }

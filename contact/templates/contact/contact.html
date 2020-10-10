@@ -11,7 +11,7 @@
                     <div id="message-overlay">
                         {% for message in messages %}
                             <div class="flex-stack message">
-                                <h2 class="message-title">Contact Form Submission</h2>
+                                <h2>Contact Form Submission</h2>
                                 <p>{{ message }}</p>
                                 <a class="close" href="/contact/">X Close</a>
                             </div>
@@ -19,7 +19,7 @@
                     </div>
                 {% endif %}
                 <div id="contact-form" class="flex-stack">
-                    <h1>CONTACT ME.</h1>
+                    <h1>CONTACT ME</h1>
                     <form action="/contact/submit/" method="post" class="flex-stack">
                         {% csrf_token %}
                         <div class="flex-row-centered-padded">

@@ -34,11 +34,19 @@ $(document).ready(function () {
         $(element).css('background-color', color);
     });
 
+    $('.repo-contents > .repo-item-separator:last-child').remove();
+
+
     // TODO Comments ...
     let detailColumn = $('#detail-column').data('currentProjectId', -1);
 
     // TODO Comments ...
     let shadowBox = $('#shadow-box').height($(document).height());
+
+    // TODO Comments ...
+    new ResizeSensor($('#list-column'), function() {
+        shadowBox.height($('#list-column').outerHeight());
+    });
 
     // TODO Comments ...
     $('.see-more-text').each(function (index, element) {
@@ -48,13 +56,27 @@ $(document).ready(function () {
         }).mouseleave(function () {
             $(element).addClass('not-hovering').removeClass('hovering');
         }).click(function () {
-            detailColumn.addClass('expanded').removeClass('collapsed');
-
             let projectCard = $(element).parent().parent().parent();
             $(".focused").removeClass('focused');
             projectCard.addClass('focused');
 
             let projectId = projectCard.data('projectId');
+
+            let offsetTop = $('#' + projectId).offset().top;
+            if (detailColumn.hasClass('expanded')) {
+                $('html, body').animate({
+                    scrollTop: offsetTop
+                }, 300);
+            } else {
+                setTimeout(function () {
+                    $('html, body').animate({
+                        scrollTop: offsetTop
+                    }, 300);
+                    }, 300);
+            }
+
+            detailColumn.addClass('expanded').removeClass('collapsed');
+
             let currentProjectId = detailColumn.data('currentProjectId');
 
             if (projectId !== currentProjectId) {
@@ -68,9 +90,10 @@ $(document).ready(function () {
     // TODO Comments ...
     $('.exit-button').click(function () {
             $('.detail-container').addClass('hide').removeClass('show');
+            shadowBox.addClass('hide-shadow').removeClass('show-shadow');
             setTimeout(function () {
                 $('.detail-container').addClass('no-display');
-                shadowBox.addClass('hide-shadow').removeClass('show-shadow');
+                shadowBox.css('z-index', '-1')
                 detailColumn.addClass('collapsed').removeClass('expanded');
                 detailColumn.data('currentProjectId', -1);
                 $(".focused").removeClass('focused');
@@ -80,7 +103,7 @@ $(document).ready(function () {
     // TODO Comments ...
     function populateDetailColumn(projectId) {
         let current = $('.show').addClass('hide').removeClass('show');
-        shadowBox.addClass('show-shadow').removeClass('hide-shadow');
+        shadowBox.css('z-index', '1').addClass('show-shadow').removeClass('hide-shadow');
         setTimeout(function () {
             current.addClass('no-display');
             let container = $('.detail-container').filter(function (index, element) {
@@ -89,6 +112,6 @@ $(document).ready(function () {
             setTimeout(function () {
                 container.addClass('show').removeClass('hide');
                 }, 200);
-            }, 400);
+            }, 200);
     }
 });

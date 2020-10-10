@@ -46,3 +46,26 @@ br {
 .job-title {
     margin-top: 0;
 }
+
+.download-button {
+    position: fixed;
+    bottom: 1.5%;
+    right: 1.25%;
+    height: 35px;
+    padding-top: 2px;
+    width: 7%;
+    z-index: 3;
+    font-size: large;
+    font-family: "Kumbh Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transition: all 0.2s linear;
+    background-color: var(--light-gray);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.download-button:hover {
+    background-color: var(--silver-sand);
+}
