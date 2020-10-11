@@ -1,23 +1,20 @@
+/* The base stylesheet which is used by the base html template */
+
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* Set HTML-wide variables for the website's color palette and set the default scroll behavior */
 html {
-    /* Main website color palette */
     --light-gray: #d2d6da;
     --platinum: #e9ebed;
     --silver-sand: #b2b9bd;
     --roman-silver: #868898;
-
-    /* Project status badge color palette */
-    --terra-cotta: #e58d74;
-    --deep-champagne: #f2cc8f;
-    --green-sheen: #81b29a;
-    --cool-gray: #9195b6;
-
     scroll-behavior: smooth;
 }
 
+/* Style the main body elements of the page */
 html, body, .flex-wrapper {
     height: 100%;
     min-height: 550px;
@@ -27,26 +24,27 @@ html, body, .flex-wrapper {
     background: transparent;
 }
 
+/* Set the font family for all header elements */
 h1, h2, h3, h4 {
     font-family: "Kumbh Sans", sans-serif;
 }
 
+/* Set the font family for paragraphs, list items and labels */
 p, li, label {
     font-family: "Roboto", sans-serif;
 }
 
+/* Remove the underline from hyperlinks */
 a {
     text-decoration: none;
 }
 
-a:visited {
+/* Set the color of hyperlinks when they are and aren't visited */
+a:visited, a:link {
     color: black;
 }
 
-a:link {
-    color: black;
-}
-
+/* Tweak font awesome default styling */
 .fa {
     padding: 0;
     width: 50px;
@@ -54,10 +52,12 @@ a:link {
     text-decoration: none;
 }
 
+/* Change the opacity of font awesome icons when they are hovered over */
 .fa:hover {
     opacity: 0.6;
 }
 
+/* The website's main navigation bar which is fixed at the top right corner of the document */
 #nav-bar {
     z-index: 3;
     position: absolute;
@@ -68,6 +68,7 @@ a:link {
     min-width: 1500px;
 }
 
+/* Style the navigation buttons that make up the navigation bar */
 .nav-button {
     width: 120px;
     min-width: 120px;
@@ -79,11 +80,13 @@ a:link {
     height: 100%;
 }
 
+/* Change the background color of and and a box shadow to navigation buttons when they are hovered over */
 .nav-button:hover {
     background: var(--silver-sand);
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* A class which disables the selection of text */
 .disable-select {
     user-select: none; /* supported by Chrome and Opera */
    -webkit-user-select: none; /* Safari */
@@ -91,17 +94,20 @@ a:link {
    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
+/* A class which wraps the main items of a page */
 .flex-wrapper {
     display: flex;
     flex-direction: column;
 }
 
+/* A column layout with no background */
 .flex-column-layout {
     flex: 1;
     display: flex;
     background-color: transparent;
 }
 
+/* A column in a flex-column-layout */
 .flex-column {
     min-height: 100%;
     display: flex;
@@ -110,19 +116,22 @@ a:link {
     align-items: center;
 }
 
+/* A row layout */
+.flex-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+/* A row in a flex-stack */
 .flex-row {
     display: flex;
     align-items: center;
 }
 
+/* A row in a flex stack that includes padding */
 .flex-row-centered-padded {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-}
-
-.flex-stack {
-    display: flex;
-    flex-direction: column;
 }

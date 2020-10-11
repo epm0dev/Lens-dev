@@ -1,38 +1,46 @@
+/* A column which contains an introduction card */
 .intro-column {
     background-color: var(--roman-silver);
     order: 1;
     flex: 6;
 }
 
+/* A column which contains a short biography */
 .bio-column {
     background-color: var(--platinum);
     order: 2;
     flex: 4;
 }
 
+/* Set the width of div elements nested in both intro-columns and bio-columns */
 .intro-column > div, .bio-column > div {
     width: 75%;
 }
 
+/* Give div elements nested in intro columns a non-transparent background and a box shadow */
 .intro-column > div {
     background-color: var(--light-gray);
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Change the margin and width of paragraph elements that are direct children of elements with the
+   flex-row-centered-padded class */
 .flex-row-centered-padded > p {
     margin: 0;
     width: 80%
 }
 
-
+/* Remove the top margin of h1 elements nested in flex-stacks */
 .flex-stack > h1 {
     margin-top: 0;
 }
 
+/* Remove all margins of h3 elements nested in flex-stacks */
 .flex-stack > h3 {
     margin: 0;
 }
 
+/* Style horizontal rule elements */
 .hr {
     background-color: var(--roman-silver);
     width: 80%;
@@ -40,12 +48,14 @@
     align-self: center;
 }
 
+/* Style image elements to be circular */
 img {
     border-radius: 50%;
     max-width: 180px;
     margin-right: 20px;
 }
 
+/* Style a large text element containing the word 'Hello' */
 #hello {
     font-size: 60px;
     margin: 0 0 20px 0;

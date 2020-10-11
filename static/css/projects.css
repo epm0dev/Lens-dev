@@ -1,3 +1,14 @@
+/* Additional styling for the projects page */
+
+/* Define additional colors to be used for project status badge backgrounds */
+html {
+    --terra-cotta: #e58d74;
+    --deep-champagne: #f2cc8f;
+    --green-sheen: #81b29a;
+    --cool-gray: #9195b6;
+}
+
+/* A column containing a list of project cars */
 #list-column {
     order: 1;
     flex: 6;
@@ -5,6 +16,7 @@
     padding-bottom: 60px;
 }
 
+/* A column which, when expanded, displays extra details regarding the currently focused project */
 #detail-column {
     order: 2;
     flex: 4;
@@ -16,6 +28,7 @@
     z-index: 2;
 }
 
+/* A dark, semi-transparent overlay which guides the user's eyes away from project cards that aren't focused */
 #shadow-box {
     position: absolute;
     box-shadow: 0 0 0 1000px inset rgba(0, 0, 0, 0.4);
@@ -26,22 +39,27 @@
     z-index: -1;
 }
 
+/* A simple class for hiding the box shadow */
 .hide-shadow {
     opacity: 0;
 }
 
+/* A simple class for showing the box shadow */
 .show-shadow {
     opacity: 1;
 }
 
+/* A simple class for collapsing the detail column */
 .collapsed {
     max-width: 0;
 }
 
+/* A simple class for expanding the detail column */
 .expanded {
     max-width: 40%;
 }
 
+/* A card which contains a project's description and related content */
 .project-card {
     background-color: var(--light-gray);
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
@@ -50,25 +68,30 @@
     border: 2px solid var(--silver-sand);
 }
 
+/* Increase the z-index of a project card that is focused */
 .focused {
     z-index: 2;
 }
 
+/* The title block of a project card */
 .title-block {
     width: 100%;
     height: 50px;
     background-color: var(--silver-sand);
 }
 
+/* Change the justification of title-block content for title-blocks nested in project-cards */
 .project-card > .title-block {
     justify-content: space-between;
 }
 
+/* Style the project title in a title-block */
 .project-title {
     font-weight: normal;
     margin: 0 0 0 20px;
 }
 
+/* Style project card status badges */
 .status-badge {
     margin-right: 30px;
     font-size: 16px;
@@ -78,25 +101,30 @@
     vertical-align: middle;
 }
 
+/* Remove the top margin of project card content items */
 .content-item {
     margin-top: 30px;
 }
 
+/* Set the padding of each project card's content container */
 .content-container {
     padding: 0 30px;
 }
 
+/* Style div elements which contain one of a project's content items */
 .content-block {
     border: 2px solid var(--silver-sand);
     padding: 5px;
 }
 
+/* Style the title of a content item */
 .content-title {
     font-weight: normal;
     margin: 0;
     padding-top: 6px;
 }
 
+/* Style the container for 'See more' buttons */
 .see-more {
     display: flex;
     align-self: flex-end;
@@ -106,21 +134,21 @@
     align-items: center;
 }
 
+/* Style text that expands the detail column with its associated project's extended description displayed when clicked */
 .see-more-text {
     font-family: "Poppins", 'sans-serif';
     transition: all .2s linear;
     z-index: 2;
     cursor: pointer;
-}
-
-.hovering {
-    opacity: 0.8;
-}
-
-.not-hovering {
     opacity: 0.5;
 }
 
+/* Increase the opacity of elements with the see-more-text class when hovered over */
+.see-more-text:hover {
+    opacity: 0.8;
+}
+
+/* Style the container for project details in the detail column */
 .detail-container {
     position: sticky;
     display: block;
@@ -132,23 +160,28 @@
     margin-top: -20px;
 }
 
+/* A class used to create offsets above each project card to scroll to, rather than the top of the cards themselves */
 .card-offset {
     height: 60px;
     background-color: transparent;
 }
 
+/* A simple class for hiding the project details of non-focused projects */
 .hide {
     opacity: 0;
 }
 
+/* A simple class for showing the project details of focused projects */
 .show {
     opacity: 1;
 }
 
+/* A simple class for disabling the display of hidden project details */
 .no-display {
     display: none;
 }
 
+/* Style an exit button to collapse the detail column */
 .exit-button {
     font-family: "Poppins", 'sans-serif';
     font-size: xx-large;
@@ -157,51 +190,62 @@
     cursor: pointer;
 }
 
+/* Set the opacity of project status tooltips */
 .status-tooltip {
     opacity: 0.4;
 }
 
+/* Set the body of the document to not display overflow */
 body {
     overflow: no-display;
 }
 
+/* Set the width of a github repo content item */
 .repo {
     width: 100%;
 }
 
+/* Set the background color of flex-stacks that are nested in elements with the repo class */
 .repo > .flex-stack {
     background-color: var(--platinum);
     border: 2px solid var(--silver-sand);
 }
 
+/* Set the width of github repo contents */
 .repo-contents {
     width: 100%;
     margin-top: 20px;
 }
 
+/* Override the change in opacity of font awesome icons for those that are direct children of a repo-item */
 .repo-item > .fa:hover {
     opacity: 1;
 }
 
+/* Style repository items */
 .repo-item {
     width: 100%;
     transition: background-color 0.2s linear;
 }
 
+/* Change the background color of repository items when they are hovered over */
 .repo-item:hover {
     background-color: var(--light-gray);
 }
 
+/* Change paragraphs nested in repo-items to grow more than their sibling elements */
 .repo-item > p {
     flex: 2;
 }
 
+/* A class for making separators for repo-items */
 .repo-item-separator {
     height: 2px;
     width: 100%;
     background-color: var(--light-gray);
 }
 
+/* Style links to each commit and repository item */
 .item-link, .sha {
     opacity: 0.6;
     transition: opacity 0.2s linear;
@@ -209,19 +253,23 @@ body {
     font-family: "Poppins", 'sans-serif';
 }
 
-.sha {
+/* Disable the margins for latest-commit links and paragraph elements that contain commit information */
+.sha, .commit-info > p {
     margin: 0;
 }
 
+/* Increase the opacity of commit and repository links when hovered over */
 .item-link:hover, .sha:hover {
     opacity: 1;
 }
 
+/* Style the container containing information about a repository's latest commit */
 .repo-commit {
     width: 100%;
     padding-bottom: 20px;
 }
 
+/* Style h3 elements that are direct children of elements with either of the repo-commit or repo-contents classes */
 .repo-commit > h3, .repo-contents > h3 {
     background-color: var(--silver-sand);
     text-align: left;
@@ -231,19 +279,18 @@ body {
     margin: 0;
 }
 
+/* Set the font family and margins of flex-rows containing commit information */
 .commit-info {
     font-family: "Poppins", 'sans-serif';
     margin: 20px 20px 0 20px;
 }
 
-.commit-info > p {
-    margin: 0;
-}
-
+/* Set the right margin of flex-stacks containing commit information */
 .commit-info > .flex-stack {
     margin-right: 20px;
 }
 
+/* Style the container for a project's description */
 .description-container {
     background-color: var(--platinum);
     border: 2px solid var(--silver-sand);
@@ -251,6 +298,7 @@ body {
     align-items: center;
 }
 
+/* Style the text and margins of h4 elements that are in description-containers */
 .description-container > h4 {
     font-family: "Kumbh Sans", sans-serif;
     font-weight: normal;

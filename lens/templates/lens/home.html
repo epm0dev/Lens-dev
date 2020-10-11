@@ -1,7 +1,8 @@
 {% extends 'lens/base.html' %}
 {% block content %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}?{% now "U" %}">
+    <!-- Link the home page's stylesheet -->
+    <link rel="stylesheet" href="{{ stylesheet }}">
 
     <!-- Create a main content area for the page. -->
     <div class="flex-wrapper">
@@ -18,6 +19,7 @@
             <div class="flex-column intro-column">
                 <div class="flex-stack">
                     <div class="flex-row-centered-padded">
+                        <!-- TODO Serve portrait with CDN -->
                         <img src="{% static '/images/placeholder-portrait.png' %}" alt="Portrait">
                         <div class="flex-stack">
                             <h1>Ethan Mancini</h1>

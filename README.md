@@ -12,7 +12,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 - Finalize code documentation
     + lens/
     + projects/
-    + static/css/
     + static/javascript/
 - Replace filler content with final content
     + Home Page

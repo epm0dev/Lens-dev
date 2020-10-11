@@ -1,9 +1,9 @@
 <!-- Extend the base page template and override its content block. -->
 {% extends 'lens/base.html' %}
 {% block content %}
-    <!-- Load static content and link the project application's stylesheet. -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/projects.css' %}?{% now "U" %}">
+    <!-- Link the projects page's stylesheet. -->
+    <link rel="stylesheet" href="{{ stylesheet }}">
 
     <!-- Display a list of project cards in one column and a column which contains the details of the focused project. -->
     <div class="flex-wrapper">

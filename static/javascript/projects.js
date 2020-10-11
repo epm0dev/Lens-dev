@@ -51,11 +51,7 @@ $(document).ready(function () {
     // TODO Comments ...
     $('.see-more-text').each(function (index, element) {
         $(element).addClass('not-hovering');
-        $(element).mouseenter(function () {
-            $(element).addClass('hovering').removeClass('not-hovering');
-        }).mouseleave(function () {
-            $(element).addClass('not-hovering').removeClass('hovering');
-        }).click(function () {
+        $(element).click(function () {
             let projectCard = $(element).parent().parent().parent();
             $(".focused").removeClass('focused');
             projectCard.addClass('focused');

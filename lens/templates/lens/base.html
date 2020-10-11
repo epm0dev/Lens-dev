@@ -8,10 +8,12 @@
     <!-- Set the page title to a value specified in the context passed to a child template for rendering. -->
     <title>Lens - {{ page_title }}</title>
 
-    <!-- Load static content, set the page's favicon, link the main project stylesheet and link the icon stylesheet. -->
+    <!-- TODO Serve favicon.ico with CDN -->
     {% load static %}
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}?{% now "U" %}">
+
+    <!-- Link the base and font awesome stylesheets. -->
+    <link rel="stylesheet" href="http://d3v7w7xrm71xax.cloudfront.net/projects.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
