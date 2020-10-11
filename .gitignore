@@ -7,3 +7,5 @@ deploy/*
 static/*.min.*
 static/*/*.min.*
 static/*/*/*.min.*
+*/migrations/*
+!*/migrations/__init__.py
