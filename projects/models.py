@@ -16,10 +16,11 @@ class Project(models.Model):
     # Explicitly define an integer primary key for a project entry.
     id = models.IntegerField(primary_key=True, auto_created=True)
 
-    # Fields which contain a project's title, status and description.
+    # Fields which contain a project's title, status, description, and extended details.
     title = models.CharField(max_length=200, null=False, unique=True)
     _status = models.CharField(max_length=1, choices=Status.choices, default=Status.FUTURE)
     description = models.TextField(max_length=3000, default='')
+    details = models.TextField(default='')
 
     # Fields which contain the start and end dates of a project.
     start_date = models.DateField(null=True)
@@ -30,16 +31,38 @@ class Project(models.Model):
     def status(self):
         return self.get__status_display()
 
-    # A property which returns a string containing a small message describing its status.
+    # A property which returns a string containing a small message describing the project's status.
     @property
     def status_tooltip(self):
         # Return the appropriate string based on the project's status.
         if self._status == self.Status.FUTURE:
             return 'This project has not yet been started.'
-        elif self._status == self.Status.IN_PROGRESS or self.status == self.Status.PAUSED:
-            return f'This project was started on {self.start_date}.'
+        elif self._status in [self.Status.IN_PROGRESS, self.Status.PAUSED]:
+            return f'This project was started on {self.start_date.strftime("%B %d, %Y")}.'
         elif self._status == self.Status.COMPLETED:
-            return f'This project was completed on {self.completion_date}.'
+            return f'This project was completed on {self.completion_date.strftime("%B %d, %Y")}.'
+
+    # A property which returns a list containing each paragraph in a project's details field.
+    @property
+    def details_as_list(self):
+        # Define an empty list to store each paragraph and an empty string to store the current paragraph.
+        details_list = []
+        par = ''
+
+        # Iterate through all of the characters in the project's details field.
+        for c in self.details:
+            # If a newline character is encountered, add the current paragraph string to the list, empty the current
+            # paragraph string and continue to the next loop iteration.
+            if c == '\n':
+                details_list.append(par)
+                par = ''
+                continue
+
+            # Otherwise, simply append the current character to the current paragraph string.
+            par += c
+
+        # Return the list of paragraphs in the project's details field.
+        return details_list
 
     # TODO Description
     @property

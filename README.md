@@ -5,7 +5,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 ---
 
 ### Current Tasks
-- Add full project details to project model to be displayed in the detail column on the projects page
 - Unit tests
     + lens/
     + projects/
