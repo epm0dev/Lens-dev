@@ -8,11 +8,9 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 - Add full project details to project model to be displayed in the detail column on the projects page
 - Unit tests
     + lens/
-    + contact/
     + projects/
 - Finalize code documentation
     + lens/
-    + contact/
     + projects/
     + static/css/
     + static/javascript/
@@ -41,4 +39,4 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 - AWS IAM Setup
 - Complete Django deployment checklist
 - Create deployment script
-- Set up django-background-tasks service for github repo caching
+- Set up CRON job for github repo caching with django-background-tasks

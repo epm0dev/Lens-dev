@@ -1,62 +1,102 @@
 <!-- Extend the base page template and override its content block. -->
 {% extends 'lens/base.html' %}
 {% block content %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}?{% now "U" %}">
+    <!-- Link the contact page's stylesheet. -->
+    <link rel="stylesheet" href="{{ stylesheet }}">
 
+    <!-- Wrap the contents of the contact page in a column layout. -->
     <div class="flex-wrapper">
         <div class="flex-column-layout">
-            <div class="flex-column" id="contact-form-content">
+            <!-- The main content area of the contact page, where a contact form is displayed. -->
+            <div class="flex-column" id="contact-content">
+                <!-- If there are any messages in the template's context, display a message overlay box. -->
                 {% if messages %}
+                    <!-- Display a semi-transparent, black overlay to focus the user's attention on the message box. -->
                     <div id="message-overlay">
+                        <!-- Display each message in messages. -->
                         {% for message in messages %}
+                            <!-- Display a message box containing the current message. -->
                             <div class="flex-stack message">
+                                <!-- The message box's title. -->
                                 <h2>Contact Form Submission</h2>
+
+                                <!-- Display the message. -->
                                 <p>{{ message }}</p>
+
+                                <!-- Display a button to close the message box and overlay. -->
                                 <a class="close" href="/contact/">X Close</a>
                             </div>
                         {% endfor %}
                     </div>
                 {% endif %}
+
+                <!-- Display a contact form. -->
                 <div id="contact-form" class="flex-stack">
+                    <!-- Display header text in the form. -->
                     <h1>CONTACT ME</h1>
+
+                    <!-- Display the contact form itself. -->
                     <form action="/contact/submit/" method="post" class="flex-stack">
+                        <!-- Include the CSRF token to improve security. -->
                         {% csrf_token %}
+
+                        <!-- Display a row containing the first name, last name and middle initial input fields. -->
                         <div class="flex-row-centered-padded">
+                            <!-- Display stacked label and input elements for the user to enter their first name. -->
                             <div class="flex-stack">
                                 <label for="fname"><span class="required">*</span>First Name:</label>
                                 <input id="fname" type="text" name="first-name" required placeholder="John">
                             </div>
+
+                            <!-- Add a separator between the first and last name stacks. -->
                             <div class="sep"></div>
+
+                            <!-- Display stacked label and input elements for the user to enter their last name. -->
                             <div class="flex-stack">
                                 <label for="lname"><span class="required">*</span>Last Name:</label>
                                 <input id="lname" type="text" name="last-name" required placeholder="Doe">
                             </div>
+
+                            <!-- Add a separator between the last name and middle initial stacks. -->
                             <div class="sep"></div>
+
+                            <!-- Display stacked label and input elements for the user to enter their middle initial. -->
                             <div class="flex-stack">
                                 <label for="minitial">MI:</label>
                                 <input id="minitial" type="text" name="middle-initial" maxlength="1" size="1" placeholder="S">
                             </div>
                         </div>
+
+                        <!-- Display a row containing the email and phone number input fields. -->
                         <div class="flex-row-centered-padded">
+                            <!-- Display stacked label and input elements for the user to enter their email address. -->
                             <div class="flex-stack">
                                 <label for="email"><span class="required">*</span>Email:</label>
                                 <input id="email" type="email" name="email-address" required placeholder="email@example.com">
                             </div>
+
+                            <!-- Add a separator between the email and phone number stacks. -->
                             <div class="sep"></div>
+
+                            <!-- Display stacked label and input elements for the user to enter their phone number. -->
                             <div class="flex-stack">
                                 <label for="phone">Phone Number:</label>
                                 <input id="phone" type="tel" name="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
                             </div>
                         </div>
+
+                        <!-- Display a row containing the message textarea field. -->
                         <div class="flex-row-centered-padded">
+                            <!-- Display stacked label and textarea elements for the user to enter their message. -->
                             <div class="flex-stack">
                                 <label for="message"><span class="required">*</span>Message:</label>
                                 <textarea id="message" name="message" required spellcheck="true" placeholder="Enter the contents of your message"></textarea>
                             </div>
                         </div>
+
+                        <!-- Display a row containing a submit button. -->
                         <div class="flex-row-centered-padded">
-                            <button type="submit">SUBMIT</button>
+                            <button type="submit" id="submit-button">SUBMIT</button>
                         </div>
                     </form>
                 </div>
@@ -64,6 +104,8 @@
         </div>
     </div>
 
-    <script src="{% static 'javascript/lib/jquery-3.5.1.js' %}"></script>
-    <script src="{% static 'javascript/contact.js' %}"></script>
+    <!-- Load each script from the list of scripts in the template context. -->
+    {% for script in scripts %}
+        <script src="{{ script }}"></script>
+    {% endfor %}
 {% endblock %}

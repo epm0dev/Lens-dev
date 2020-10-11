@@ -1,9 +1,13 @@
-#contact-form-content {
+/* Additional styling for the contact page */
+
+/* The main content area of the contact page  */
+#contact-content {
     background-color: var(--roman-silver);
     flex: 1;
     justify-content: center;
 }
 
+/* The contact form itself */
 #contact-form {
     align-items: center;
     background-color: var(--light-gray);
@@ -11,6 +15,7 @@
     width: 60%;
 }
 
+/* The contact form title block header */
 #contact-form > h1 {
     margin: 0;
     width: 100%;
@@ -21,39 +26,72 @@
     font-weight: normal;
 }
 
+/* Style spans containing asterisks in the form to denote that the fields they are associated with are required */
 .required {
     color: red;
     padding-right: 5px;
 }
 
+/* Align labels at flex-start in flex-stacks, which align their items in the center by default */
 .flex-stack > label {
     align-self: flex-start;
 }
 
+/* Set the minimum width of separator divs */
 .sep {
     min-width: 20px;
 }
 
+/* Tweak the flex-row-centered-padded class by eliminating bottom padding */
+.flex-row-centered-padded {
+    padding-bottom: 0;
+}
+
+/* Set the width and alignment of flex-stacks nested in elements with the flex-row-centered-padded class */
+.flex-row-centered-padded > .flex-stack {
+    width: 100%;
+    align-items: center;
+}
+
+/* Set the width and padding of the form */
+form {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+
+/* Style the input and textarea form elements */
 input, textarea {
     background-color: var(--platinum);
     border: 1px solid var(--silver-sand);
     width: 100%;
+    font-size: large;
+    font-family: "Kumbh Sans", sans-serif;
+    padding: 5px;
 }
 
+/* Disable outlining of input and textarea elements when they are focused */
 input:focus, textarea:focus {
     outline: none;
 }
 
+/* Set the height of form input elements */
+input {
+    height: 20px;
+}
+
+/* Style textarea elements to have a fixed height */
 textarea {
     height: 200px;
     resize: none;
 }
 
+/* Tweak the bottom padding of label elements */
 label {
     padding-bottom: 3px;
 }
 
-button {
+/* The contact form's submit button */
+#submit-button {
     padding: 15px 20px 10px 20px;
     font-size: x-large;
     background-color: var(--silver-sand);
@@ -66,24 +104,12 @@ button {
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Change the background color of the submit button when the user hovers their mouse over it */
 button:hover {
     background-color: var(--roman-silver);
 }
 
-.flex-row-centered-padded {
-    padding-bottom: 0;
-}
-
-.flex-row-centered-padded > .flex-stack {
-    width: 100%;
-    align-items: center;
-}
-
-form {
-    width: 100%;
-    padding: 0 20px 20px 20px;
-}
-
+/* The semi-transparent overlay which partially hides the contact page's contents when a message box is displayed */
 #message-overlay {
     position: absolute;
     z-index: 5;
@@ -95,6 +121,7 @@ form {
     justify-content: center;
 }
 
+/* Style message boxes */
 .message {
     background-color: var(--platinum);
     border: 2px solid var(--silver-sand);
@@ -102,6 +129,7 @@ form {
     align-items: center;
 }
 
+/* Style message box title block headers */
 .message > h2 {
     background-color: var(--silver-sand);
     height: 40px;
@@ -113,12 +141,14 @@ form {
     font-weight: normal;
 }
 
+/* Style message box text content */
 .message > p {
     margin: 10px 0 0 0;
     padding: 10px;
     text-align: center;
 }
 
+/* Style message box close buttons */
 .close {
     align-self: flex-end;
     cursor: pointer;
@@ -127,16 +157,7 @@ form {
     transition: all 0.2s linear;
 }
 
+/* Slightly decrease the opacity of message box close buttons on mouse over */
 .close:hover {
     opacity: 0.6;
-}
-
-input, textarea {
-    font-size: large;
-    font-family: "Kumbh Sans", sans-serif;
-    padding: 5px;
-}
-
-input {
-    height: 20px;
 }
