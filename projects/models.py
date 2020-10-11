@@ -61,6 +61,9 @@ class Project(models.Model):
             # Otherwise, simply append the current character to the current paragraph string.
             par += c
 
+        # Add the last paragraph to the the list of paragraphs.
+        details_list.append(par)
+
         # Return the list of paragraphs in the project's details field.
         return details_list
 

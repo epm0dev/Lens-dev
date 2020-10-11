@@ -30,6 +30,7 @@ class ProjectHomeView(View):
         # Create a context dictionary to populate the view's HTML template with.
         context = {
             'page_title': self.page_title,
+            'stylesheet': self.stylesheet,
             'scripts': self.scripts,
             'projects': Project.objects.all(),
             'repos': get_repos()

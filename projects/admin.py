@@ -29,6 +29,7 @@ class ProjectAdmin(admin.ModelAdmin):
         ('id', 'title', '_status'),
         ('start_date', 'completion_date'),
         'description',
+        'details'
     )
 
     # TODO Documentation

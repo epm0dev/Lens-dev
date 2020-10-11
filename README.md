@@ -29,12 +29,12 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 
 ### Complete Before Deployment
 - Add portrait to home page
-- Minify CSS/JavaScript files
+- Minify JavaScript files
 - Serve static files with a CDN
 - Extensive unit tests
 - Black box tests
 - Setup email DKIM for django-ses (https://github.com/django-ses/django-ses)
 - AWS IAM Setup
 - Complete Django deployment checklist
-- Create deployment script
+- Migrate to PostgreSQL database backend
 - Set up CRON job for github repo caching with django-background-tasks
