@@ -195,11 +195,6 @@ html {
     opacity: 0.4;
 }
 
-/* Set the body of the document to not display overflow */
-body {
-    overflow: no-display;
-}
-
 /* Set the width of a github repo content item */
 .repo {
     width: 100%;

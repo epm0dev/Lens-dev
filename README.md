@@ -11,14 +11,15 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 - Finalize code documentation
     + lens/
     + projects/
-    + static/javascript/
-- Replace filler content with final content
+- Replace filler text with final content
     + Home Page
-    + Projects Page
 
 
 ### Known Bugs
-- When clicking the see more button in a project card near the bottom of the page, and when the detail column is not yet expanded, the window jumps slightly due to the height of the page resizing.
+- Some issues with animation timing on projects page when detail column needs to expand
+    + When the window is already at the correct position for a project once the detail column is expanded and that project card's see more button is clicked, the subsequent animations are delayed.
+    + When clicking the see more button in a project card near the bottom of the page, the window jumps slightly then scrolls rather than staying put
+    + When clicking the see more button in a project card otherwise, there is a small stutter in the scroll animation
 
 
 ### Future Changes/Additions
@@ -28,9 +29,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 
 
 ### Complete Before Deployment
-- Add portrait to home page
-- Minify JavaScript files
-- Serve static files with a CDN
 - Extensive unit tests
 - Black box tests
 - Setup email DKIM for django-ses (https://github.com/django-ses/django-ses)
@@ -38,3 +36,8 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 - Complete Django deployment checklist
 - Migrate to PostgreSQL database backend
 - Set up CRON job for github repo caching with django-background-tasks
+
+
+### Complete After Deployment
+- Update portrait
+- Populate database with projects

@@ -16,10 +16,11 @@ class ProjectHomeView(View):
     # Define the URL from which the projects page's stylesheet is served.
     stylesheet = 'http://d3v7w7xrm71xax.cloudfront.net/projects.min.css'
 
-    # Define the paths of JavaScript files to be used ti render the page.
+    # Define the paths of JavaScript files to be used to render the page.
     scripts = [
         'http://d3v7w7xrm71xax.cloudfront.net/jquery-3.5.1.min.js',
         'http://d3v7w7xrm71xax.cloudfront.net/resize-sensor-1.2.2.js',
+        'http://d3v7w7xrm71xax.cloudfront.net/projects.min.js'
     ]
 
     # Handle GET requests.

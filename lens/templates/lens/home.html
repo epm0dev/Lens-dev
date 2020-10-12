@@ -1,6 +1,5 @@
 {% extends 'lens/base.html' %}
 {% block content %}
-    {% load static %}
     <!-- Link the home page's stylesheet -->
     <link rel="stylesheet" href="{{ stylesheet }}">
 
@@ -19,8 +18,7 @@
             <div class="flex-column intro-column">
                 <div class="flex-stack">
                     <div class="flex-row-centered-padded">
-                        <!-- TODO Serve portrait with CDN -->
-                        <img src="{% static '/images/placeholder-portrait.png' %}" alt="Portrait">
+                        <img src="http://d3v7w7xrm71xax.cloudfront.net/portrait.png" alt="Portrait">
                         <div class="flex-stack">
                             <h1>Ethan Mancini</h1>
                             <h3>Student at North Carolina State University</h3>
