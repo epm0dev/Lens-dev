@@ -7,7 +7,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 ### Current Tasks
 - Unit tests
     + lens/
-    + projects/
 - Finalize code documentation
     + lens/
 - Replace filler text with final content
@@ -30,8 +29,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 
 
 ### Complete Before Deployment
-- Extensive unit tests
-- Black box tests
 - Setup email DKIM for django-ses (https://github.com/django-ses/django-ses)
 - AWS IAM Setup
 - Complete Django deployment checklist
