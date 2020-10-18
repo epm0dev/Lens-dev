@@ -10,7 +10,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
     + projects/
 - Finalize code documentation
     + lens/
-    + projects/
 - Replace filler text with final content
     + Home Page
 
@@ -20,6 +19,8 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
     + When the window is already at the correct position for a project once the detail column is expanded and that project card's see more button is clicked, the subsequent animations are delayed.
     + When clicking the see more button in a project card near the bottom of the page, the window jumps slightly then scrolls rather than staying put
     + When clicking the see more button in a project card otherwise, there is a small stutter in the scroll animation
+
+- When creating new projects via the admin page, you must first save the new project to the database before saving an associated content item to the database (i.e. you cannot save a new project and github content item at the same time, even though the github content item is displayed on the projects admin page via a stacked inline)
 
 
 ### Future Changes/Additions

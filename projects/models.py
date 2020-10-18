@@ -67,7 +67,8 @@ class Project(models.Model):
         # Return the list of paragraphs in the project's details field.
         return details_list
 
-    # TODO Description
+    # Define a property which returns a list of all of the project's related content items, sorted by their display
+    # priority.
     @property
     def content(self):
         return sorted(
@@ -100,7 +101,8 @@ class AbstractContent(models.Model):
     # Explicitly define an integer primary key for a project entry.
     id = models.IntegerField(primary_key=True, auto_created=True)
 
-    # TODO Description
+    # A field which contains a content item's content type. The available content types are specified by the
+    # ContentTypes class.
     content_type = models.CharField(max_length=20, choices=ContentTypes.choices)
 
     # A field which indicates whether a content entry should be displayed at the start, in the middle (default), or at
@@ -121,7 +123,6 @@ class AbstractContent(models.Model):
         ordering = ['-display_priority']
 
 
-# TODO Further implement github content model.
 # A model, which inherits from the AbstractContent model, that represents a block representing a project's github
 # repository.
 class GithubContent(AbstractContent):
