@@ -1,15 +1,35 @@
 from django.core import mail
-from django.test import TestCase
+from django.test import TestCase, SimpleTestCase, Client
 
 
-class HomePageTestCase(TestCase):
-    def setUp(self):
-        pass
+# A test case for the home page.
+class HomePageTestCase(SimpleTestCase):
+    # Set up the class for testing.
+    @classmethod
+    def setUpClass(cls):
+        # Call the superclass' setUpClass() method.
+        super().setUpClass()
 
+        # Create a client object for the class to make requests.
+        cls.client = Client()
 
-class RepoCacheTestCase(TestCase):
-    def setUp(self):
-        pass
+    # Test get requests for the home page.
+    def test_get(self):
+        # Send a get request without a trailing forward slash.
+        response = self.client.get('')
+
+        # Ensure that the response has the correct status code and the proper templates were used.
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'lens/base.html')
+        self.assertTemplateUsed(response, 'lens/home.html')
+
+        # Send a get request with a trailing forward slash.
+        response = self.client.get('/')
+
+        # Ensure that the response has the correct status code and the proper template was rendered.
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'lens/base.html')
+        self.assertTemplateUsed(response, 'lens/home.html')
 
 
 # A test case which tests whether emails can successfully be sent with AWS SES.

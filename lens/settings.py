@@ -1,27 +1,30 @@
 from pathlib import Path
 import os
 
+
+# Development Settings
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# Secret security key
 SECRET_KEY = '@3&@g@gc_)8300m8z7_fsa0$6#53kb(bv!uvis(autvjx+d1et'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Turn debug mode on
 DEBUG = True
 
+# Specify the hosts who can host the server
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
 ]
 
 
-# Application definition
+# Application Definition
 
+
+# Specify installed apps
 INSTALLED_APPS = [
     'django.contrib.admin.apps.SimpleAdminConfig',
     'django.contrib.auth',
@@ -38,6 +41,7 @@ INSTALLED_APPS = [
     'contact',
 ]
 
+# Specify installed middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,7 +52,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Specify the root url configuration file
 ROOT_URLCONF = 'lens.urls'
+
+
+# Template Settings
+
 
 TEMPLATES = [
     {
@@ -66,11 +75,13 @@ TEMPLATES = [
     },
 ]
 
+
+# Specify the WSGI application
 WSGI_APPLICATION = 'lens.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# Database Settings
+
 
 DATABASES = {
         'default': {
@@ -80,8 +91,8 @@ DATABASES = {
     }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+# Password Validation Settings
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -99,26 +110,24 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
+# Internationalization Settings
+
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
+# Static File Settings
+
+
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-# TODO Documentation
+
+# AWS SES Email Backend Settings
 EMAIL_BACKEND = 'django_ses.SESBackend'
 AWS_SES_ACCESS_KEY_ID = ''
 AWS_SES_SECRET_ACCESS_KEY = ''

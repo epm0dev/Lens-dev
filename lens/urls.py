@@ -3,15 +3,16 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from .views import HomeView
 from adminplus.sites import AdminSitePlus
-
 import resume.urls
 import projects.urls
 import contact.urls
 # import blog.urls
 
 
-# TODO Documentation
+# Swap out the default admin site for an adminplus admin site instance.
 admin.site = AdminSitePlus()
+
+# Autodiscover admin models.
 admin.autodiscover()
 
 # Define the URL patterns for the main application.
@@ -24,5 +25,5 @@ urlpatterns = [
     re_path(r'^contact/?', include(contact.urls)),
 ]
 
-# TODO Documentation
+# Add a URL pattern to allow access to the django-ses admin page.
 urlpatterns += (url(r'^admin/django-ses/', include('django_ses.urls')),)

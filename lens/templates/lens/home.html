@@ -1,4 +1,7 @@
+<!-- Override the base page template. -->
 {% extends 'lens/base.html' %}
+
+<!-- Override the base template's content block to add home page content to the page. -->
 {% block content %}
     <!-- Link the home page's stylesheet -->
     <link rel="stylesheet" href="{{ stylesheet }}">
@@ -6,8 +9,10 @@
     <!-- Create a main content area for the page. -->
     <div class="flex-wrapper">
         <div class="flex-column-layout">
+            <!-- Create a column to display a short bio. -->
             <div class="flex-column bio-column">
                 <div>
+                    <!-- Display a welcome message and the short bio. -->
                     <h1 id="hello">Hello</h1>
                     <h3>Welcome to Lens, my resume and portfolio website.</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi earum fugit veniam amet quae sint vitae numquam dolore sunt quod a odio officia voluptate doloribus, at. Cum quasi mollitia eaque. Voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium.</p>
@@ -15,20 +20,33 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi earum fugit veniam amet quae sint vitae numquam dolore sunt quod a odio officia voluptate doloribus, at. Cum quasi mollitia eaque. Voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium.</p>
                 </div>
             </div>
+
+            <!-- Create a column to display an introduction card. -->
             <div class="flex-column intro-column">
                 <div class="flex-stack">
                     <div class="flex-row-centered-padded">
+                        <!-- Display a portrait photo. -->
                         <img src="http://d3v7w7xrm71xax.cloudfront.net/portrait.png" alt="Portrait">
+
+                        <!-- Display my name and 'occupation/title' next to the portrait. -->
                         <div class="flex-stack">
                             <h1>Ethan Mancini</h1>
                             <h3>Student at North Carolina State University</h3>
                         </div>
                     </div>
+
+                    <!-- Display a small separator. -->
                     <div class="hr"></div>
+
+                    <!-- Display a short introduction. -->
                     <div class="flex-row-centered-padded">
-                        <p>I am currently studying Statistics with a minor in Computer Programming and, after recieving my undergraduate degree, I plan to earn a master's degree in Data Analytics or some related field. Outside of my coursework, I am interested in Artificial Intelligence, Machine Learning, and Data Science. My hobbies include music production, photography and full stack development of web applications with Python/Django.</p>
+                        <p>I am currently studying Statistics with a minor in Computer Programming and, after receiving my undergraduate degree, I plan to earn a master's degree in Data Analytics or some related field. Outside of my coursework, I am interested in Artificial Intelligence, Machine Learning, and Data Science. My hobbies include music production, photography and full stack development of web applications with Python/Django.</p>
                     </div>
+
+                    <!-- Display a small separator. -->
                     <div class="hr"></div>
+
+                    <!-- Display small icons which link to various social media accounts/other websites. -->
                     <div class="flex-row-centered-padded">
                         <a href="/" class="fa fa-globe fa-2x"></a>
                         <a target="_blank" href="https://github.com/epm0dev/" class="fa fa-github fa-2x"></a>
