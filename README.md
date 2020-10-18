@@ -5,10 +5,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 ---
 
 ### Current Tasks
-- Unit tests
-    + lens/
-- Finalize code documentation
-    + lens/
 - Replace filler text with final content
     + Home Page
 
