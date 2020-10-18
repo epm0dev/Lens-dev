@@ -1,10 +1,18 @@
+<!-- An HTML template which displays an extended project details as well as its title, status and main description. -->
 <!--suppress HtmlUnknownAnchorTarget -->
 <div class="detail-container no-display hide" data-project-id="{{ project.id }}">
+    <!-- Display a button to collapse the detail pain when clicked. -->
     <a class="exit-button">X</a>
+
+    <!-- Display the project's title, status tooltip and main description. -->
     <h2>{{ project.title }}</h2>
     <h4 class="status-tooltip">{{ project.status_tooltip }}</h4>
     <p>{{ project.description }}</p>
+
+    <!-- Display a horizontal rule to separate the project's details from the rest of its information. -->
     <hr>
+
+    <!-- Display all of the paragraphs comprising the project's details. -->
     {% for paragraph in project.details_as_list %}
         <p>{{ paragraph }}</p>
     {% endfor %}

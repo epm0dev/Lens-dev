@@ -1,34 +1,58 @@
+<!-- Extend the base project card content template. -->
 {% extends 'projects/content/base.html' %}
+
+<!-- Override the base content template's header block. -->
 {% block header %}
+    <!-- Display an icon and a title for the project card content block. -->
     <a class="fa fa-github fa-2x" target="_blank" href="{{ content.repository_url }}"></a>
     <h2 class="content-title">{{ content.content_type.label }}</h2>
 {% endblock %}
+
+<!-- Override the base content template's main content block. -->
 {% block main_content %}
+    <!-- Iterate through the list of repos to find the repo(s) for the current project. -->
     {% for repo in repos %}
         {% if repo.url == content.repository_url %}
             <div class="flex-row-centered-padded">
                 <div class="flex-stack repo">
+                    <!-- Display information about the latest commit to the repository. -->
                     <div class="flex-stack repo-commit">
+                        <!-- Display a header for the section. -->
                         <h3>Latest Commit</h3>
+
+                        <!-- Create a container for the main commit information. -->
                         <div class="flex-row commit-info">
+                            <!-- Display information about the latest commit. -->
                             <span>Commit <a class="sha" target="_blank" href="{{ repo.latest_commit.url }}">{{ repo.latest_commit.sha }}&#8599;</a>
                                  by {{ repo.latest_commit.author }} on {{ repo.latest_commit.date }}
                             </span>
                         </div>
+
+                        <!-- Display the message associated with the latest commit. -->
                         <div class="flex-row commit-info">
                             <p>{{ repo.latest_commit.message }}</p>
                         </div>
                     </div>
+
+                    <!-- Create a container to display the contents of the base directory of the repository. -->
                     <div class="flex-stack repo-contents">
+                        <!-- Display a header for the section. -->
                         <h3>Contents</h3>
+
+                        <!-- Display an item for each item in the root directory of the github repository. -->
                         {% for item in repo.root_dir %}
                             <div class="flex-row repo-item">
+                                <!-- Display different icons for directories and files. -->
                                 {% if item.type == 'dir' %}
                                     <div class="fa fa-folder-o"></div>
                                 {% elif item.type == 'file' %}
                                     <div class="fa fa-file-o"></div>
                                 {% endif %}
+
+                                <!-- Display the item's path. -->
                                 <p>{{ item.path }}</p>
+
+                                <!-- Display a link to the current repository item's individual page on github. -->
                                 <a class="item-link" target="_blank" href="{{ item.url }}">View On Github &#8599;</a></div>
                             <div class="repo-item-separator"></div>
                         {% endfor %}

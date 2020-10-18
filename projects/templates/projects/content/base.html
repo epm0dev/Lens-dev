@@ -1,4 +1,8 @@
+<!-- The base HTML template for project content blocks. -->
 <div class="content-item flex-stack">
+    <!-- Define a header block for child templates to override. -->
     <div class="title-block flex-row disable-select">{% block header %}{% endblock %}</div>
+
+    <!-- Define a main content block for child templates to override. -->
     <div class="content-block">{% block main_content %}{% endblock %}</div>
 </div>

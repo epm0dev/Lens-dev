@@ -1,14 +1,17 @@
 <!-- Extend the base page template and override its content block. -->
 {% extends 'lens/base.html' %}
+
+<!-- Override the base page template's content block to display information about projects. -->
 {% block content %}
-    {% load static %}
     <!-- Link the projects page's stylesheet. -->
     <link rel="stylesheet" href="{{ stylesheet }}">
 
     <!-- Display a list of project cards in one column and a column which contains the details of the focused project. -->
     <div class="flex-wrapper">
         <div class="flex-column-layout">
+            <!-- Make a column containing all of the individual project's cards. -->
             <div class="flex-column" id="list-column">
+                <!-- Add a shadow box which, when made visible, partially hides non-focused project cards. -->
                 <div id="shadow-box" class="hide-shadow"></div>
 
                 <!-- Display a card containing information about each project. -->
@@ -16,6 +19,8 @@
                     {% include 'projects/project/card.html' %}
                 {% endfor %}
             </div>
+
+            <!-- Make a column that, when expanded, displays a focused project's extended details. -->
             <div class="flex-column collapsed" id="detail-column">
                 <!-- Display each project's details. -->
                 {% for project in projects %}
@@ -25,7 +30,7 @@
         </div>
     </div>
 
-    <!-- Load scripts to dynamically set the status badge background color for each project card and handle som animations. -->
+    <!-- Load scripts to dynamically set the status badge background color for each project card and assist with some animations. -->
     {% for script in scripts %}
         <script src="{{ script }}"></script>
     {% endfor %}

@@ -1,9 +1,16 @@
+<!-- Extend the base project card content template. -->
 {% extends 'projects/content/base.html' %}
+
+<!-- Override the base content template's header block. -->
 {% block header %}
+    <!-- Display an icon and a title for the project card content block. -->
     <span class="fa fa-ellipsis-v fa-2x"></span>
     <h2 class="content-title">Project Description</h2>
 {% endblock %}
+
+<!-- Override the base content template's main content block. -->
 {% block main_content %}
+    <!-- Display the project's description. -->
     <div class="flex-row-centered-padded">
         <div class="flex-stack description-container">
             <h4>{{ project.description }}</h4>
