@@ -7,6 +7,8 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 ### Current Tasks
 - Replace filler text with final content
     + Home Page
+    + Project Entries in production database
+    + Portrait photo on home page
 
 
 ### Known Bugs
@@ -25,13 +27,6 @@ My personal resume and portfolio website written with HTML, CSS, JavaScript and 
 
 
 ### Complete Before Deployment
-- Setup email DKIM for django-ses (https://github.com/django-ses/django-ses)
-- AWS IAM Setup
 - Complete Django deployment checklist
 - Migrate to PostgreSQL database backend
 - Set up CRON job for github repo caching with django-background-tasks
-
-
-### Complete After Deployment
-- Update portrait
-- Populate database with projects
